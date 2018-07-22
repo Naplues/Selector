@@ -1,6 +1,6 @@
 package nju.gzq;
 
-import nju.gzq.gui.Panel;
+import nju.gzq.gui.GUI;
 
 import javax.swing.*;
 
@@ -13,7 +13,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Panel("Selector");
+                new GUI();
             }
         });
     }
