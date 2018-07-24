@@ -3,8 +3,7 @@ package nju.gzq.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.File;
 
 /**
@@ -17,9 +16,22 @@ public class GUI implements ActionListener {
     private JPanel southPanel = new JPanel();
     private JPanel centralPanel = new JPanel();
 
+
+    // menus
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu fileMenu = new JMenu("File");
+    private JMenuItem openMenuItem = new JMenuItem("Open");
+    private JMenuItem exportMenuItem = new JMenuItem("Export");
+    private JMenuItem exitMenuItem = new JMenuItem("Exit");
+    private JMenu aboutMenu = new JMenu("About");
+    private JMenuItem aboutMenuItem = new JMenuItem("About");
+    private JMenuItem helpMenuItem = new JMenuItem("Help");
+
+    // buttons
     private JButton openButton = new JButton("Open Data file");
     private JButton rankButton = new JButton("Ranking");
     private JButton selectButton = new JButton("Selecting");
+    private JButton exportButton = new JButton("Export");
 
     public GUI() {
         //Frame setting
@@ -33,12 +45,28 @@ public class GUI implements ActionListener {
         frame.setResizable(true);
         frame.setVisible(true);
 
+
         try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            SwingUtilities.updateComponentTreeUI(frame.getContentPane());
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            //SwingUtilities.updateComponentTreeUI(frame.getContentPane());
         } catch (Exception e) {
 
         }
+
+        //Menu setting
+        fileMenu.setMnemonic('F');
+        openMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
+        exportMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_MASK));
+        fileMenu.add(openMenuItem);
+        fileMenu.add(exportMenuItem);
+        fileMenu.addSeparator();
+        fileMenu.add(exitMenuItem);
+        menuBar.add(fileMenu);
+        aboutMenu.add(aboutMenuItem);
+        aboutMenu.add(helpMenuItem);
+        menuBar.add(aboutMenu);
+        frame.setJMenuBar(menuBar);
+
 
         //Panel setting
         rootPanel.setLayout(new BorderLayout());
@@ -48,14 +76,19 @@ public class GUI implements ActionListener {
 
         //Button setting
         northPanel.add(openButton);
+        northPanel.add(exportButton);
         southPanel.add(rankButton);
         southPanel.add(selectButton);
 
 
         //Event listening
-        openButton.addActionListener(this);
-        rankButton.addActionListener(this);
-        selectButton.addActionListener(this);
+        openButton.addActionListener(this::actionPerformed);
+        exportButton.addActionListener(this::actionPerformed);
+        rankButton.addActionListener(this::actionPerformed);
+        selectButton.addActionListener(this::actionPerformed);
+        openMenuItem.addActionListener(this::actionPerformed);
+        exportMenuItem.addActionListener(this::actionPerformed);
+        exitMenuItem.addActionListener(this::actionPerformed);
     }
 
     /**
@@ -65,15 +98,15 @@ public class GUI implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         // open data folder
-        if (e.getSource() == openButton) {
+        if (e.getSource() == openButton || e.getSource() == openMenuItem) {
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            fileChooser.showDialog(new JLabel(), "选择");
-            File dir = fileChooser.getCurrentDirectory();
-            if (dir.isDirectory()) {
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);  //only show directories
+            int value = fileChooser.showDialog(new JLabel(), "Select root dir");
+
+            // approve option
+            if (value == JFileChooser.APPROVE_OPTION) {
+                File dir = fileChooser.getSelectedFile();
                 System.out.println(dir.getPath());
-            } else {
-                System.out.println("Error");
             }
         }
 
@@ -85,6 +118,16 @@ public class GUI implements ActionListener {
         //selecting combination features whose performance is best
         if (e.getSource() == selectButton) {
             System.out.println("select");
+        }
+
+        // export result files .dot file and graph file
+        if (e.getSource() == exportButton || e.getSource() == exportMenuItem) {
+            System.out.println("export");
+        }
+
+        // Exiting tool
+        if (e.getSource() == exitMenuItem) {
+            frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
         }
     }
 }

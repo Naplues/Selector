@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Panel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/Panel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +22,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="133">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,8 +34,8 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            <state relative-caret-position="1004">
+              <caret line="107" column="57" lean-forward="true" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,7 +46,7 @@
       <file leaf-file-name="UIManager.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/UIManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="6023">
               <caret line="382" column="75" selection-start-line="382" selection-start-column="18" selection-end-line="382" selection-end-column="75" />
             </state>
           </provider>
@@ -84,14 +77,14 @@
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/Windows.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/Main.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/GUI.form" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
         <option value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-17" />
-    <option name="y" value="113" />
+    <option name="x" value="40" />
+    <option name="y" value="152" />
     <option name="width" value="1620" />
     <option name="height" value="863" />
   </component>
@@ -103,7 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,8 +144,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,7 +245,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-17" y="113" width="1620" height="863" extended-state="0" />
+    <frame x="40" y="152" width="1620" height="863" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -268,7 +261,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11730769" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118589744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -289,6 +282,33 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/UIManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7258">
+          <caret line="382" column="75" selection-start-line="382" selection-start-column="18" selection-end-line="382" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -383,15 +403,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java___jb_tmp___">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java___jb_tmp___" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="133">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -400,7 +416,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/UIManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="6023">
           <caret line="382" column="75" selection-start-line="382" selection-start-column="18" selection-end-line="382" selection-end-column="75" />
         </state>
       </provider>
@@ -414,8 +430,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        <state relative-caret-position="1004">
+          <caret line="107" column="57" lean-forward="true" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
