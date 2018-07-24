@@ -1,6 +1,10 @@
 package nju.gzq.gui;
 
 
+import nju.gzq.gui.image.ImageViewer;
+import nju.gzq.pid.MySelector;
+import test.PidTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,6 +20,7 @@ public class GUI implements ActionListener {
     private JPanel southPanel = new JPanel();
     private JPanel centralPanel = new JPanel();
 
+    private ImageViewer treeImage;
 
     // menus
     private JMenuBar menuBar = new JMenuBar();
@@ -32,6 +37,11 @@ public class GUI implements ActionListener {
     private JButton rankButton = new JButton("Ranking");
     private JButton selectButton = new JButton("Selecting");
     private JButton exportButton = new JButton("Export");
+
+
+    // Argument
+    private String rootPath;
+
 
     public GUI() {
         //Frame setting
@@ -73,12 +83,15 @@ public class GUI implements ActionListener {
         rootPanel.add(northPanel, BorderLayout.NORTH);
         rootPanel.add(centralPanel, BorderLayout.CENTER);
         rootPanel.add(southPanel, BorderLayout.SOUTH);
+        treeImage = new ImageViewer("C:\\Users\\gzq\\Desktop\\result.png");
+        centralPanel.add(treeImage);
 
         //Button setting
         northPanel.add(openButton);
         northPanel.add(exportButton);
         southPanel.add(rankButton);
         southPanel.add(selectButton);
+        selectButton.setEnabled(false);
 
 
         //Event listening
@@ -106,18 +119,25 @@ public class GUI implements ActionListener {
             // approve option
             if (value == JFileChooser.APPROVE_OPTION) {
                 File dir = fileChooser.getSelectedFile();
-                System.out.println(dir.getPath());
+                rootPath = dir.getPath();
+                selectButton.setEnabled(true);
             }
         }
 
         // ranking data
         if (e.getSource() == rankButton) {
             System.out.println("rank");
+            String outputPath = "C:\\Users\\gzq\\Desktop\\result";
+
         }
 
         //selecting combination features whose performance is best
         if (e.getSource() == selectButton) {
+
             System.out.println("select");
+            PidTest.rootPath = rootPath + "\\";
+            String outputPath = "C:\\Users\\gzq\\Desktop\\result";
+            testSelector(outputPath);
         }
 
         // export result files .dot file and graph file
@@ -129,5 +149,20 @@ public class GUI implements ActionListener {
         if (e.getSource() == exitMenuItem) {
             frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
         }
+    }
+
+    /**
+     * 测试特征选择器
+     *
+     * @throws Exception
+     */
+    public void testSelector(String outputPath) {
+        //选择特征
+        int featureNumber = 10;
+        int neededFeatureNumber = 10;
+        double threshold = 0.0;
+        String fileType = "svg";
+        int top = 10;
+        new MySelector().start(featureNumber, outputPath, fileType, neededFeatureNumber, threshold, false, top, false);
     }
 }
