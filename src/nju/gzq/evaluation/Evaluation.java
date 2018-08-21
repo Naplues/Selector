@@ -2,12 +2,15 @@ package nju.gzq.evaluation;
 
 import nju.gzq.base.BaseFeature;
 import nju.gzq.base.BaseProject;
+import nju.gzq.base.BaseRanking;
 
 import java.io.File;
 
 
 public class Evaluation {
-
+    // combination approach (MULTIPLE x /SUMMATION +)
+    public static final int MULTIPLE = 0;
+    public static final int SUMMATION = 1;
 
     public static double getRecall() {
         double recall = .0;
@@ -24,9 +27,27 @@ public class Evaluation {
         return map;
     }
 
-    public static double getF1() {
-        double f1 = .0;
-        return f1;
+    /**
+     * 获取数据集上所有项目的平均AUC值
+     *
+     * @param features
+     * @param dataPath
+     * @param labelIndex   类别索引
+     * @param abandonIndex 遗弃索引
+     * @return
+     */
+    public static double getF1(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) {
+
+        File[] projects = new File(dataPath).listFiles();
+        Double value = .0;
+        for (File p : projects) {
+            BaseProject project = new BaseProject(p.getPath(), labelIndex, abandonIndex);
+            project.setFeatures(BaseRanking.rankByFeature(project, combination, BaseRanking.RANK_DESC, features));  //Ranking
+            value += F1.getValue(project.getFeatures());
+        }
+        value /= projects.length;
+
+        return value;
     }
 
     /**
@@ -44,7 +65,7 @@ public class Evaluation {
         for (File file : files) {
             BaseProject project = new BaseProject(file.getPath(), labelIndex, abandonIndex);
             BaseFeature[][] baseFeatures = project.getFeatures();
-            auc += AUC.getAUC(features, baseFeatures, combination);
+            auc += AUC.getValue(features, baseFeatures, combination);
         }
         auc /= files.length;
         System.out.println(auc);

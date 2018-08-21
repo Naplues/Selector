@@ -7,10 +7,6 @@ import java.util.List;
 
 public class AUC {
 
-    // combination approach (MULTIPLE x /SUMMATION +)
-    public static final int MULTIPLE = 0;
-    public static final int SUMMATION = 1;
-
     /**
      * 一个项目的平均AUC值
      *
@@ -18,14 +14,14 @@ public class AUC {
      * @param baseFeatures
      * @return
      */
-    public static double getAUC(Integer[] features, BaseFeature[][] baseFeatures, int combination) {
+    public static double getValue(Integer[] features, BaseFeature[][] baseFeatures, int combination) {
         double auc = .0;
         for (int i = 0; i < baseFeatures.length; i++) {
             // 计算组合分数
             for (int j = 0; j < baseFeatures[i].length; j++) {
                 double probability = 1.0;
                 for (int k = 0; k < features.length; k++) {
-                    if (combination == MULTIPLE)
+                    if (combination == Evaluation.MULTIPLE)
                         probability *= baseFeatures[i][j].getValueFromIndex(features[k]);
                     else
                         probability += baseFeatures[i][j].getValueFromIndex(features[k]);
