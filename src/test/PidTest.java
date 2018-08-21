@@ -54,7 +54,7 @@ public class PidTest {
     }
 
     /**
-     * 测试Pi方法在各版本数据集上的性能以及平均性能
+     * 测试Pid方法在各版本数据集上的性能以及平均性能
      *
      * @param versions
      */
@@ -70,7 +70,7 @@ public class PidTest {
     }
 
     /**
-     * 测试Pi在候选集个数较少的bucket上的性能
+     * 测试Pid在候选集个数较少的bucket上的性能
      *
      * @param versions
      * @param features

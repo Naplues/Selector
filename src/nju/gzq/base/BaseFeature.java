@@ -2,6 +2,7 @@ package nju.gzq.base;
 
 /**
  * BaseFeature: Built-in BaseFeature class which defines the structure of the feature read from external file (e.g., .csv)
+ * An instance denotes the data of a line in .csv file
  */
 public class BaseFeature {
     //////////////////////////////////////// Field Definition ////////////////////////////////////////////

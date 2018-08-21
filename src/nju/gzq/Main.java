@@ -1,9 +1,5 @@
 package nju.gzq;
 
-import nju.gzq.gui.GUI;
-
-import javax.swing.*;
-
 public class Main {
     /**
      * Program entry
@@ -12,13 +8,5 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new GUI();
-            }
-        });
-
-        //new GUI().testSelector("C:\\Users\\gzq\\Desktop\\result");
     }
 }
