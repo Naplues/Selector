@@ -15,6 +15,7 @@ public class BaseProject {
     private String projectName;
     private String[] dataFileNames;
     private BaseFeature[][] features;
+    private static String[] featureNames;
     public static String separator = ",";
 
 
@@ -41,6 +42,8 @@ public class BaseProject {
             for (int j = 0; j < features[i].length; j++) {
                 features[i][j] = new BaseFeature(lines.get(j + 1).split(separator), labelIndex, abandonIndex);
             }
+            // 设置特征名称与索引
+            if (featureNames == null) setFeatureNames(lines.get(0).split(separator), labelIndex, abandonIndex);
         }
     }
 
@@ -66,5 +69,29 @@ public class BaseProject {
 
     public void setDataFileNames(String[] dataFileNames) {
         this.dataFileNames = dataFileNames;
+    }
+
+    public static String getFeatureNames(Object index) {
+        return featureNames[(Integer) index];
+    }
+
+    public void setFeatureNames(String[] feature, int labelIndex, int... abandonIndex) {
+        this.featureNames = new String[feature.length - 1 - abandonIndex.length];
+        for (int i = 0, j = 0; i < featureNames.length; j++) {
+            // label attribute
+            if (j == labelIndex) continue;
+
+            // abandon attribute
+            boolean isAbandon = false;
+            for (int abandon : abandonIndex)
+                if (j == abandon) {
+                    isAbandon = true;
+                    break;
+                }
+            if (isAbandon) continue;
+
+            //useful feature
+            featureNames[i++] = feature[j];
+        }
     }
 }

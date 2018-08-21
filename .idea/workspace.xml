@@ -7,14 +7,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ant-1.3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ant-1.4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ant-1.5.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ant-1.6.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ant-1.7.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-camel-1.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-camel-1.2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-camel-1.4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-camel-1.6.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-forrest-0.7.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-forrest-0.8.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-ivy-2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-lucene-2.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-lucene-2.2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-lucene-2.4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-pbeans-1.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-pbeans-2.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-poi-1.5.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-poi-2.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-poi-2.5.1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-poi-3.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-synapse-1.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-synapse-1.1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-synapse-1.2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-tomcat-6.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-velocity-1.4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-velocity-1.6.1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/apache-velocity.1.5.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/jEdit-3.2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/jEdit-4.0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/jEdit-4.1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/jEdit-4.2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ant/ant_data/jEdit-4.3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/AUC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Selector_jar/Selector.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Selector_jar/Selector.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/image/ImageComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/image/ImageViewer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/image/ImageViewer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/pid/Evaluation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/pid/MySelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/pid/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/pid/Ranking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/test/ChangeLocatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Selector/test/PidTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nju/gzq/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/image/ImageComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/image/ImageViewer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/PidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PidTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/pid/Evaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/pid/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/pid/Ranking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ChangeLocatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PidTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,57 +77,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="550">
+              <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#226#227#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseRanking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseRanking.java">
+      <file leaf-file-name="Evaluation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySelector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PidTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/PidTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-441">
-              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseProject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseFeature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="190">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,15 +134,18 @@
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/image/ImageViewer.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/Main.java" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" />
         <option value="$PROJECT_DIR$/src/test/PidTest.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/AUC.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="305" />
+    <option name="y" value="299" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -131,19 +158,12 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
               <item name="Selector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selector" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
@@ -168,18 +188,14 @@
               <item name="Selector" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="pid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selector" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,11 +206,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gzq\Desktop\git\Selector\data" />
       <recent name="C:\Users\gzq\Desktop\git\Selector\src\nju\gzq\pid" />
       <recent name="C:\Users\gzq\Desktop\git\Selector\src" />
       <recent name="C:\Users\gzq\Desktop\git\Selector\src\nju\gzq" />
       <recent name="C:\Users\naplues\Desktop\git\Selector\src\nju\gzq\selector" />
-      <recent name="C:\Users\gzq\Desktop\git\Selector\src\nju\gzq\selector" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -282,22 +298,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32908162" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27168366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27124184" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908162" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1076759" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1098081" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -308,7 +325,6 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32908162" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -382,37 +398,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2527">
-          <caret line="133" column="41" lean-forward="true" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PidTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Project.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/PidTest.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -427,16 +416,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1634">
-          <caret line="86" column="4" lean-forward="true" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -451,16 +431,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="107" column="57" lean-forward="true" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -475,16 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -492,16 +454,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -509,16 +462,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -576,97 +520,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/image/ImageComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/image/ImageComponent.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/image/ImageViewer.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Evaluation.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Project.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Ranking.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/PidTest.java" />
+    <entry file="file://$PROJECT_DIR$/data/ant/ant_data/jEdit-3.2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="950">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/image/ImageViewer.java">
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="836">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="e#2296#2297#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Selector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="85" column="29" lean-forward="true" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+        <state relative-caret-position="-837">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseRanking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/AUC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Evaluation.java">
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Selector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="108" column="24" lean-forward="true" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/Ranking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseRanking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/pid/MySelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PidTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+        <state relative-caret-position="550">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

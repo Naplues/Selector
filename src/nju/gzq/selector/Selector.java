@@ -1,5 +1,7 @@
 package nju.gzq.selector;
 
+import nju.gzq.base.BaseProject;
+
 import java.util.*;
 
 /**
@@ -120,6 +122,6 @@ public class Selector {
      * @return 特征名称
      */
     public String getFeatureName(Object valueIndex) {
-        return "null";
+        return BaseProject.getFeatureNames(valueIndex);
     }
 }
