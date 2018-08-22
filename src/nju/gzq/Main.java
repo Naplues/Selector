@@ -13,8 +13,10 @@ public class Main {
         //new RecallSelector().start(10, "rc1", "svg", .0, false, 10);
         //new MRRSelector().start(10, "mrr", "svg", .0, false, 10);
         //new MAPSelector().start(10, "map", "svg", .0, false, 10);
-        //new AUCSelector().start(6, "auc", "svg", .0, false, 10);
-        new F1Selector().start(5, "f1", "svg", .0, true, 10);
+        //new AUCSelector().start(6, "auc", "svg",6, .0, false, 10);
+        new F1Selector().start(20, "f1", "svg", 10, .0, true, 10);
+
+        //Evaluation.getF1(new Integer[10], "data/new_data", Evaluation.SUMMATION, 20);
 
     }
 }
@@ -45,9 +47,9 @@ class MAPSelector extends Selector {
 
 class F1Selector extends Selector {
     public double getValue(Integer[] features) {
-        int labelIndex = 0;
+        int labelIndex = 20;
         int[] abandonIndex = {};
-        return Evaluation.getF1(features, "data/debt_data", Evaluation.SUMMATION, labelIndex, abandonIndex);
+        return Evaluation.getF1(features, "data/new_data", Evaluation.MULTIPLE, labelIndex, abandonIndex);
     }
 }
 

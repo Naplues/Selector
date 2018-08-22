@@ -106,6 +106,7 @@ public class Evaluation {
             value += F1.getValue(project.getFeatures());
         }
         value /= projects.length;
+        System.out.println("F1: " + value);
         return value;
     }
 

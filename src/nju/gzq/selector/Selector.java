@@ -14,16 +14,16 @@ public class Selector {
     /**
      * 开始选择特征
      *
-     * @param featureNumber        特征数目
-     * @param filePath             输出图片路径
-     * @param type                 输出图片类型
-     * @param threshold            性能阈值
-     * @param isHorizontal         节点摆放位置
-     * @param top                  输出前top个结果
+     * @param featureNumber 特征数目
+     * @param filePath      输出图片路径
+     * @param type          输出图片类型
+     * @param threshold     性能阈值
+     * @param isHorizontal  节点摆放位置
+     * @param top           输出前top个结果
      */
-    public final void start(int featureNumber, String filePath, String type, double threshold, boolean isHorizontal, int top) {
+    public final void start(int featureNumber, String filePath, String type, int neededFeatureNumber, double threshold, boolean isHorizontal, int top) {
         Node root = new Node(featureNumber);  //创建根节点
-        explore(root);  //探索特征组合
+        explore(root, neededFeatureNumber);  //探索特征组合
         System.out.println("Explore Finish.");
 
         // 获取叶子节点，并根据性能对叶子节点排序
@@ -57,7 +57,7 @@ public class Selector {
      *
      * @param parent
      */
-    public final void explore(Node parent) {
+    public final void explore(Node parent, int neededFeatureNumber) {
         // 获取候选特征集合
         Set<Object> candidatesSet = parent.getFeatureCandidates();
         Object[] candidates = candidatesSet.toArray();
@@ -77,7 +77,8 @@ public class Selector {
                 candidatesSet.remove(candidate); //更新候选集
                 Node newNode = new Node(getFeatureName(candidate), candidate, parent, usedSet, candidatesSet, newPerformance);
                 parent.addChild(newNode);
-                explore(newNode);  //探索子节点
+                if (newNode.getFeatureUsed().size() < neededFeatureNumber)
+                    explore(newNode, neededFeatureNumber);  //探索子节点
             } else {
                 usedSet.remove(candidate);
             }

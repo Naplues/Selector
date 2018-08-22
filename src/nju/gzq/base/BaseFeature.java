@@ -51,7 +51,7 @@ public class BaseFeature {
         }
 
         // assign label value
-        this.label = valueString[labelIndex].equals("1") || valueString[labelIndex].equals("true") || valueString[labelIndex].equals("TRUE");
+        this.label = !valueString[labelIndex].equals("0") || valueString[labelIndex].equals("true") || valueString[labelIndex].equals("TRUE");
     }
 
     /**
