@@ -11,10 +11,10 @@ public class Main {
      */
     public static void main(String[] args) {
         //new RecallSelector().start(10, "rc1", "svg", .0, false, 10);
-        new MRRSelector().start(10, "mrr", "svg", .0, false, 10);
-        new MAPSelector().start(10, "map", "svg", .0, false, 10);
+        //new MRRSelector().start(10, "mrr", "svg", .0, false, 10);
+        //new MAPSelector().start(10, "map", "svg", .0, false, 10);
         //new AUCSelector().start(6, "auc", "svg", .0, false, 10);
-        //new F1Selector().start(5, "f1", "svg", .0, true, 10);
+        new F1Selector().start(5, "f1", "svg", .0, true, 10);
 
     }
 }
