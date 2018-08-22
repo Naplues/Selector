@@ -13,7 +13,7 @@ Feature Selector: To find excellent feature combinations according to various me
 ## package: jnu.gzq.base
 该包内实现了数据集在运行时的存储结构和一些排序过程.
 
-## demo: 计算F1
+## demo: 计算最优F1组合
 ```java
 /**
  * 简单使用:实现一个子类继承Selector类, 重写父类的getValue(Integer[] features)方法(即,调用预先实现的度量计算结果)
@@ -51,8 +51,10 @@ class F1Selector extends Selector {
 }
 ```
 
+## Sample Result
+![Algorithm](https://github.com/Naplues/Selector/blob/master/assert/f1.svg "Algorithm")
+
 ## Selector Algorithm
 ![sample](https://github.com/Naplues/Selector/blob/master/assert/algorithm.bmp)
-## Sample
-![Algorithm](https://github.com/Naplues/Selector/blob/master/assert/f1.svg "Algorithm")
+
 
