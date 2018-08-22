@@ -17,15 +17,13 @@ public class Selector {
      * @param featureNumber        特征数目
      * @param filePath             输出图片路径
      * @param type                 输出图片类型
-     * @param neededFeatureNumber  需要特征数目
      * @param threshold            性能阈值
      * @param isHorizontal         节点摆放位置
      * @param top                  输出前top个结果
-     * @param frequencyInformation 频率信息
      */
-    public final void start(int featureNumber, String filePath, String type, int neededFeatureNumber, double threshold, boolean isHorizontal, int top, boolean frequencyInformation) {
+    public final void start(int featureNumber, String filePath, String type, double threshold, boolean isHorizontal, int top) {
         Node root = new Node(featureNumber);  //创建根节点
-        explore(root, neededFeatureNumber);  //探索特征组合
+        explore(root);  //探索特征组合
         System.out.println("Explore Finish.");
 
         // 获取叶子节点，并根据性能对叶子节点排序
@@ -50,7 +48,7 @@ public class Selector {
         for (int i = 0; i < featureNumber; i++) featureNames[i] = getFeatureName(i);
         //当未指定选择返回结果数或者选择的结果数大于实际生成的值时，使用全部叶节点。修正全部叶节点个数
         if (top == ALL || top > leaves.size()) top = leaves.size();
-        Graphviz.visual(result, isHorizontal, filePath, type, featureNames, top, frequencyInformation);
+        Graphviz.visual(result, isHorizontal, filePath, type, featureNames, top);
     }
 
 
@@ -58,9 +56,8 @@ public class Selector {
      * 探索新特征
      *
      * @param parent
-     * @param neededFeatureNumber
      */
-    public final void explore(Node parent, int neededFeatureNumber) {
+    public final void explore(Node parent) {
         // 获取候选特征集合
         Set<Object> candidatesSet = parent.getFeatureCandidates();
         Object[] candidates = candidatesSet.toArray();
@@ -80,8 +77,7 @@ public class Selector {
                 candidatesSet.remove(candidate); //更新候选集
                 Node newNode = new Node(getFeatureName(candidate), candidate, parent, usedSet, candidatesSet, newPerformance);
                 parent.addChild(newNode);
-                if (newNode.getFeatureUsed().size() < neededFeatureNumber)
-                    explore(newNode, neededFeatureNumber);  //探索子节点
+                explore(newNode);  //探索子节点
             } else {
                 usedSet.remove(candidate);
             }

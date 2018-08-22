@@ -17,15 +17,14 @@ public class Graphviz {
     /**
      * 可视化树形图
      *
-     * @param leaves               叶节点集合, 可以根据叶节点探索对应的整条路径
-     * @param isHorizontal         结点摆放方式 水平/垂直
-     * @param filePath             存储文件路径
-     * @param type                 输出文件类型
-     * @param featureNames         特征名称
-     * @param top                  输出前top个结果
-     * @param frequencyInformation 是否显示频率信息
+     * @param leaves       叶节点集合, 可以根据叶节点探索对应的整条路径
+     * @param isHorizontal 结点摆放方式 水平/垂直
+     * @param filePath     存储文件路径
+     * @param type         输出文件类型
+     * @param featureNames 特征名称
+     * @param top          输出前top个结果
      */
-    public static void visual(Node[] leaves, boolean isHorizontal, String filePath, String type, String[] featureNames, int top, boolean frequencyInformation) {
+    public static void visual(Node[] leaves, boolean isHorizontal, String filePath, String type, String[] featureNames, int top) {
 
         ///////////////////////////////////////// 1. 收集路径信息( 节点集合和边集合) //////////////////////////////////////
         Set<Node> nodes = new HashSet<>(); //节点集合
@@ -83,8 +82,6 @@ public class Graphviz {
         summary += "Feature frequency in Top " + top + " paths:\n";
         for (int i = 0; i < frequency.length; i++) summary += featureNames[i] + ": \t" + frequency[i] + "\n";
         System.out.println(summary);
-        if (frequencyInformation)
-            string += "-1 [ label = \"" + summary + "\" shape = square, style = filled, fillcolor = lightgray ]";
 
         string += "}";
         FileHandle.writeStringToFile(filePath + ".dot", string); // 写入文件

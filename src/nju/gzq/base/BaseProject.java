@@ -12,12 +12,15 @@ import java.util.List;
  * BaseFeature[][]: 每一行代表一个文件里的所有记录数目, 所有行组成一个项目,若项目只有一个数据文件,则大小为BaseFeature[1][]
  */
 public class BaseProject {
-    private String projectName;
-    private String[] dataFileNames;
-    private BaseFeature[][] features;
-    private static String[] featureNames;
-    public static String separator = ",";
+    protected String projectName;
+    protected String[] dataFileNames;
+    protected BaseFeature[][] features;
+    protected static String[] featureNames;
+    protected static String separator = ",";
 
+
+    public BaseProject() {
+    }
 
     /**
      * 创建项目数据
