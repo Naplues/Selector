@@ -14,12 +14,13 @@ public class Selector {
     /**
      * 开始选择特征
      *
-     * @param featureNumber 特征数目
-     * @param filePath      输出图片路径
-     * @param type          输出图片类型
-     * @param threshold     性能阈值
-     * @param isHorizontal  节点摆放位置
-     * @param top           输出前top个结果
+     * @param featureNumber       特征数目
+     * @param filePath            输出图片路径
+     * @param type                输出图片类型
+     * @param neededFeatureNumber 最多组合特征数
+     * @param threshold           性能阈值
+     * @param isHorizontal        节点摆放位置
+     * @param top                 输出前top个结果
      */
     public final void start(int featureNumber, String filePath, String type, int neededFeatureNumber, double threshold, boolean isHorizontal, int top) {
         Node root = new Node(featureNumber);  //创建根节点

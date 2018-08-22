@@ -7,49 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/ant-1.7.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/arc.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/camel-1.6.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/e-learning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/intercafe.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/ivy-2.0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/jedit-4.3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/kalkulator.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/log4j-1.2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/lucene-2.4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/nieruchomosci.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/pbeans2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/pdftranslator.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/poi-3.0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/prop-6.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/redaktor.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/serapion.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/skarbonka.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/sklebagd.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/synapse-1.2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/systemclean_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/szybkafucha.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/termoproject.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/tomcat.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/velocity-1.6.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/workflow.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/wspomaganiepi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/xalan-2.7.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/xerces-1.4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/new_data/(final)data/zuzel.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/F1Selector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/F1Selector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/metrics/F1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/metrics/F1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,44 +20,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+            <state relative-caret-position="133">
+              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseRanking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseRanking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Evaluation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="F1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -142,16 +70,16 @@
         <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/MRR.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/advance/plc/Project.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/Main.java" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="369" />
     <option name="y" value="139" />
     <option name="width" value="1936" />
@@ -196,6 +124,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gzq" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Selector" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gzq" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
@@ -312,6 +247,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -321,12 +257,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30610022" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30610022" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908162" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1119403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1119403" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -565,44 +501,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Selector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/base/BaseRanking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="1007">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="1026">
           <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Selector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" selection-start-line="16" selection-end-line="22" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
