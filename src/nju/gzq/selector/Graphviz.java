@@ -82,6 +82,7 @@ public class Graphviz {
         summary += "Feature frequency in Top " + top + " paths:\n";
         for (int i = 0; i < frequency.length; i++) summary += featureNames[i] + ": \t" + frequency[i] + "\n";
         System.out.println(summary);
+        Setting.resultString = summary;
 
         string += "}";
         FileHandle.writeStringToFile(filePath + ".dot", string); // 写入文件

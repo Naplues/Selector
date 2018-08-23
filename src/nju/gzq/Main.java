@@ -1,5 +1,6 @@
 package nju.gzq;
 
+
 import nju.gzq.evaluation.Evaluation;
 import nju.gzq.selector.Selector;
 
@@ -11,45 +12,12 @@ public class Main {
      */
     public static void main(String[] args) {
         //new RecallSelector().start(10, "rc1", "svg", .0, false, 10);
-        //new MRRSelector().start(10, "mrr", "svg", .0, false, 10);
-        //new MAPSelector().start(10, "map", "svg", .0, false, 10);
-        //new AUCSelector().start(6, "auc", "svg",6, .0, false, 10);
-        new F1Selector().start(20, "f1", "svg", 10, .0, true, 10);
+        //new MRRSelector().start(10, "mrr", "svg", 10,.0, false, 10);
+        //new MAPSelector().start(10, "map", "svg", 3, .0, false, 10);
+        new AUCSelector().start(6, "auc", "svg",6, .0, false, 10);
+        //new MySelector().start(20, "f1", "svg", 3, .0, true, 10);
+        //new Window();
 
-        //Evaluation.getF1(new Integer[10], "data/new_data", Evaluation.SUMMATION, 20);
-
-    }
-}
-
-class RecallSelector extends Selector {
-    public double getValue(Integer[] features) {
-        int labelIndex = 12;
-        int[] abandonIndex = {0, 2};
-        return Evaluation.getRecall(features, "data/buckets_data/form3", 1, Evaluation.MULTIPLE, labelIndex, abandonIndex);
-    }
-}
-
-class MRRSelector extends Selector {
-    public double getValue(Integer[] features) {
-        int labelIndex = 12;
-        int[] abandonIndex = {0, 2};
-        return Evaluation.getMRR(features, "data/buckets_data/form3", Evaluation.MULTIPLE, labelIndex, abandonIndex);
-    }
-}
-
-class MAPSelector extends Selector {
-    public double getValue(Integer[] features) {
-        int labelIndex = 12;
-        int[] abandonIndex = {0, 2};
-        return Evaluation.getMAP(features, "data/buckets_data/form3", Evaluation.MULTIPLE, labelIndex, abandonIndex);
-    }
-}
-
-class F1Selector extends Selector {
-    public double getValue(Integer[] features) {
-        int labelIndex = 20;
-        int[] abandonIndex = {};
-        return Evaluation.getF1(features, "data/new_data", Evaluation.MULTIPLE, labelIndex, abandonIndex);
     }
 }
 
