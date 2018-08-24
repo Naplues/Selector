@@ -32,7 +32,6 @@ public class AUC {
             }
             auc += singleAUC(baseFeatures[i]);
         }
-
         auc /= baseFeatures.length;
         return auc;
     }

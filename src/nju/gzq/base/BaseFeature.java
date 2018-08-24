@@ -1,5 +1,9 @@
 package nju.gzq.base;
 
+import nju.gzq.selector.Setting;
+
+import java.util.Set;
+
 /**
  * BaseFeature: Built-in BaseFeature class which defines the structure of the feature read from external file (e.g., .csv)
  * An instance denotes the data of a line in .csv file
@@ -29,7 +33,6 @@ public class BaseFeature {
      * @param labelIndex  label index in valueString in array
      */
     public BaseFeature(String[] valueString, int labelIndex, int... abandonIndex) {
-
         // assign feature value
         featureValue = new Double[valueString.length - 1 - abandonIndex.length];
         for (int i = 0, j = 0; i < featureValue.length; j++) {
@@ -51,7 +54,7 @@ public class BaseFeature {
         }
 
         // assign label value
-        this.label = !valueString[labelIndex].equals("0") || valueString[labelIndex].equals("true") || valueString[labelIndex].equals("TRUE");
+        this.label = valueString[labelIndex].equals(Setting.positiveName);
     }
 
     /**

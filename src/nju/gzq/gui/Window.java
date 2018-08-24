@@ -32,24 +32,24 @@ public class Window implements ActionListener {
     public static JPanel featurePanel = new JPanel(); // 特征面板
 
     // 操作按钮
-    public static JButton openButton = new JButton("打开数据集");
-
+    public static JButton openButton = new JButton("打开数据集文件夹");
     public static JButton allButton = new JButton("全选");
     public static JButton reverseButton = new JButton("反选");
-
     public static JButton startButton = new JButton("开始选择");
 
 
     // 标签
+    public static JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
     public static JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
     public static JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
     public static JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
     public static JLabel metric = new JLabel("度量选择", JLabel.CENTER);
+    public static JLabel combination = new JLabel("组合方式", JLabel.CENTER);
     public static JLabel top = new JLabel("Top(K)组合结果", JLabel.CENTER);
     public static JLabel filePath = new JLabel("输出文件路径", JLabel.CENTER);
     public static JLabel fileType = new JLabel("输出文件类型", JLabel.CENTER);
     public static JLabel position = new JLabel("树形方向", JLabel.CENTER);
-    public static JLabel label = new JLabel("类别特征名(从备选特征中选择)", JLabel.CENTER);
+    public static JLabel label = new JLabel("标记特征索引及取值(e.g. 10;true;false)", JLabel.CENTER);
 
 
     // 输入框
@@ -57,6 +57,7 @@ public class Window implements ActionListener {
     public static JTextField maxSelectFeatureNumberText = new JTextField(15);
     public static JTextField thresholdText = new JTextField(15);
     public static JComboBox<String> metricComboBox = new JComboBox<>();
+    public static JComboBox<String> combinationComboBox = new JComboBox<>();
     public static JTextField topText = new JTextField(15);
     public static JTextField filePathText = new JTextField(15);
     public static JComboBox<String> fileTypeComboBox = new JComboBox<>();
@@ -93,6 +94,7 @@ public class Window implements ActionListener {
         panel.add(bottomPanel, BorderLayout.SOUTH);
         // 操作面板
         operatePanel.setBorder(BorderFactory.createLineBorder(new Color(12, 128, 32)));
+        operatePanel.add(info);
         operatePanel.add(openButton);
         operatePanel.add(allButton);
         operatePanel.add(reverseButton);
@@ -123,6 +125,7 @@ public class Window implements ActionListener {
         panel1.add(maxSelectFeatureNumber);
         panel1.add(threshold);
         panel1.add(metric);
+        panel1.add(combination);
         panel1.add(top);
         panel1.add(filePath);
         panel1.add(fileType);
@@ -140,9 +143,12 @@ public class Window implements ActionListener {
 
         metricComboBox.addItem("F1");
         metricComboBox.addItem("AUC");
-        metricComboBox.addItem("Recall");
+        metricComboBox.addItem("Recall@1");
         metricComboBox.addItem("MRR");
         metricComboBox.addItem("MAP");
+
+        combinationComboBox.addItem("连乘");
+        combinationComboBox.addItem("累加");
 
         fileTypeComboBox.addItem("svg");
         fileTypeComboBox.addItem("jpg");
@@ -154,6 +160,7 @@ public class Window implements ActionListener {
         panel2.add(maxSelectFeatureNumberText);
         panel2.add(thresholdText);
         panel2.add(metricComboBox);
+        panel2.add(combinationComboBox);
         panel2.add(topText);
         panel2.add(filePathText);
         panel2.add(fileTypeComboBox);
@@ -162,8 +169,9 @@ public class Window implements ActionListener {
 
 
         // 结果输出框
-        bottomPanel.add(jsp);
-        bottomPanel.setBorder(new TitledBorder(null, "Top (K) 输出结果", TitledBorder.DEFAULT_JUSTIFICATION,
+        resultArea.setLineWrap(true);
+        bottomPanel.add(jsp, BorderLayout.CENTER);
+        bottomPanel.setBorder(new TitledBorder(null, "Top (K) 输出结果(导出图片请先安装Graphviz)", TitledBorder.DEFAULT_JUSTIFICATION,
                 TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
 
         // 添加事件监听
@@ -181,33 +189,39 @@ public class Window implements ActionListener {
      * 动作实现
      */
     public void actionPerformed(ActionEvent e) {
-
-        //选择数据集
+        //////////////////////////////////////////////////////////选择数据集
         if (e.getSource() == openButton) {
-
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);  //only show directories
             int value = fileChooser.showDialog(new JLabel(), "选择数据集文件夹");
-
             // approve option
             if (value == JFileChooser.APPROVE_OPTION) {
                 File dir = fileChooser.getSelectedFile();
-
                 attributeNames = FileHandle.getAttributeNames(dir);
                 selectedIndices = new int[attributeNames.length];
                 for (int i = 0; i < selectedIndices.length; i++) selectedIndices[i] = 1;
-                filePathText.setText(dir.getPath() + "\\result");
                 dataPath = dir.getPath();
+                filePathText.setText(System.getProperty("user.dir") + "\\result");
                 checkBoxes = new JCheckBox[attributeNames.length];
+
+                //remove 之前复选框
+                featurePanel.removeAll();
                 for (int i = 0; i < checkBoxes.length; i++) {
-                    checkBoxes[i] = new JCheckBox(attributeNames[i]);
+                    checkBoxes[i] = new JCheckBox(attributeNames[i] + ": " + i);
                     featurePanel.add(checkBoxes[i]);
                 }
 
+                checkBoxes[0].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
                 for (int i = 0; i < checkBoxes.length; i++) {
-                    checkBoxes[i].addChangeListener(new ChangeListener() {
+
+                    checkBoxes[i].addActionListener(new ActionListener() {
                         @Override
-                        public void stateChanged(ChangeEvent e) {
+                        public void actionPerformed(ActionEvent e) {
                             int count = 0;
                             for (int i = 0; i < checkBoxes.length; i++) {
                                 if (checkBoxes[i].isSelected()) {
@@ -227,7 +241,7 @@ public class Window implements ActionListener {
             }
         }
 
-        //选择测试特征
+        ////////////////////////////////////////////////////////////////选择测试特征
         if (e.getSource() == allButton) {
             for (int i = 0; i < checkBoxes.length; i++)
                 checkBoxes[i].setSelected(true);
@@ -237,48 +251,42 @@ public class Window implements ActionListener {
 
         if (e.getSource() == reverseButton) {
             for (int i = 0; i < checkBoxes.length; i++) {
-                if (checkBoxes[i].isSelected())
-                    checkBoxes[i].setSelected(false);
-                else
-                    checkBoxes[i].setSelected(true);
+                if (checkBoxes[i].isSelected()) checkBoxes[i].setSelected(false);
+                else checkBoxes[i].setSelected(true);
             }
             int count = 0;
-            for (int i = 0; i < checkBoxes.length; i++) {
-                if (checkBoxes[i].isSelected()) {
-                    count++;
-                }
-            }
+            for (int i = 0; i < checkBoxes.length; i++) if (checkBoxes[i].isSelected()) count++;
+
             featureNumberText.setText((count - 1) + "");
             maxSelectFeatureNumberText.setText(featureNumberText.getText());
         }
 
-        //开始选择事件
+        /////////////////////////////////////////////////////////开始选择事件
         if (e.getSource() == startButton) {
 
             //设置运行配置
 
             Setting.dataPath = dataPath;
-            String labelString = labelText.getText();
-            for (int i = 0; i < attributeNames.length; i++) {
-                if (labelString.equals(attributeNames[i])) {
-                    Setting.labelIndex = i;
-                    break;
-                }
+
+            try {
+                String[] temps = labelText.getText().split(";");
+                Setting.labelIndex = Integer.parseInt(temps[0]);
+                Setting.positiveName = temps[1];
+                Setting.negativeName = temps[2];
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                JOptionPane.showMessageDialog(null, "请输入正确的标记特征索引值格式:index;true;false!", "出错!", JOptionPane.INFORMATION_MESSAGE);
             }
+
 
             int abandonCount = 0;
-            for (int i = 0; i < checkBoxes.length; i++) {
-                if (!checkBoxes[i].isSelected()) abandonCount++;
-            }
-            int[] abandonIndex = new int[abandonCount];
-            for (int i = 0, j = 0; i < checkBoxes.length; i++)
-                if (!checkBoxes[i].isSelected()) {
-                    abandonIndex[j++] = i;
-                }
+            for (int i = 0; i < checkBoxes.length; i++) if (!checkBoxes[i].isSelected()) abandonCount++;
 
+            int[] abandonIndex = new int[abandonCount];
+            for (int i = 0, j = 0; i < checkBoxes.length; i++) if (!checkBoxes[i].isSelected()) abandonIndex[j++] = i;
 
             Setting.abandonIndex = abandonIndex;
             Setting.metric = metricComboBox.getSelectedItem().toString();
+            Setting.combination = combinationComboBox.getSelectedIndex();
 
             Setting.featureNumber = Integer.parseInt(featureNumberText.getText());
             Setting.maxSelectFeatureNumber = Integer.parseInt(maxSelectFeatureNumberText.getText());
@@ -291,10 +299,14 @@ public class Window implements ActionListener {
             else
                 Setting.isHorizontal = true;
 
-            System.out.println("开始选择");
             //开始选择
-            new MySelector().start(Setting.featureNumber, Setting.filePath, Setting.fileType, Setting.maxSelectFeatureNumber, Setting.threshold, Setting.isHorizontal, Setting.top);
-            System.out.println("选择结束");
+            try {
+                System.out.println("开始选择");
+                new MySelector().start(Setting.featureNumber, Setting.filePath, Setting.fileType, Setting.maxSelectFeatureNumber, Setting.threshold, Setting.isHorizontal, Setting.top);
+                System.out.println("选择结束");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "请检查数据集格式,或者选择了非数值型属性!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+            }
             resultArea.setText(Setting.resultString);
         }
     }

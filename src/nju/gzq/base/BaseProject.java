@@ -94,7 +94,7 @@ public class BaseProject {
             if (isAbandon) continue;
 
             //useful feature
-            featureNames[i++] = feature[j].replace("\"","");
+            featureNames[i++] = feature[j].replace("\"", "");
         }
     }
 }

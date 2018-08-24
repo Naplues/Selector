@@ -128,7 +128,7 @@ public class Evaluation {
             auc += AUC.getValue(features, project.getFeatures(), combination);
         }
         auc /= projects.length;
-        System.out.println(auc);
+        System.out.println("AUC: " + auc);
         return auc;
     }
 }
