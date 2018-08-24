@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
@@ -40,6 +39,7 @@ public class Window implements ActionListener {
 
     // 标签
     public static JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
+    public static JLabel proInfo = new JLabel("Path(s):0");
     public static JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
     public static JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
     public static JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
@@ -64,18 +64,23 @@ public class Window implements ActionListener {
     public static JComboBox<String> positionComboBox = new JComboBox<>();
     public static JTextField labelText = new JTextField(15);
 
-
     //特征复选
     public static JCheckBox[] checkBoxes;
+
+    //进度条
+    public static JProgressBar progressBar = new JProgressBar();
 
     //结果区域
     public static JTextArea resultArea = new JTextArea(20, 88);
     public static JScrollPane jsp = new JScrollPane(resultArea);
     public static JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
 
+
+    //数据变量
     public static String[] attributeNames;
     public static int[] selectedIndices;
     public static String dataPath;
+    public static int currentProgress = 0;
 
     public Window() {
         placeComponents(); // 摆放组件
@@ -99,6 +104,10 @@ public class Window implements ActionListener {
         operatePanel.add(allButton);
         operatePanel.add(reverseButton);
         operatePanel.add(startButton);
+        operatePanel.add(progressBar);
+        operatePanel.add(proInfo);
+        progressBar.setMinimum(0);
+        progressBar.setStringPainted(true);
         allButton.setEnabled(false);
         reverseButton.setEnabled(false);
         startButton.setEnabled(false);
@@ -182,6 +191,14 @@ public class Window implements ActionListener {
         reverseButton.addActionListener(this::actionPerformed);
         openButton.addActionListener(this::actionPerformed);
 
+        // 添加进度改变通知
+        progressBar.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                System.out.println("当前进度值: " + progressBar.getValue() + "; " +
+                        "进度百分比: " + progressBar.getPercentComplete());
+            }
+        });
         frame.setVisible(true);// 设置界面可见
     }
 
@@ -211,14 +228,7 @@ public class Window implements ActionListener {
                     featurePanel.add(checkBoxes[i]);
                 }
 
-                checkBoxes[0].addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
                 for (int i = 0; i < checkBoxes.length; i++) {
-
                     checkBoxes[i].addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -265,7 +275,6 @@ public class Window implements ActionListener {
         if (e.getSource() == startButton) {
 
             //设置运行配置
-
             Setting.dataPath = dataPath;
 
             try {
@@ -276,7 +285,6 @@ public class Window implements ActionListener {
             } catch (ArrayIndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(null, "请输入正确的标记特征索引值格式:index;true;false!", "出错!", JOptionPane.INFORMATION_MESSAGE);
             }
-
 
             int abandonCount = 0;
             for (int i = 0; i < checkBoxes.length; i++) if (!checkBoxes[i].isSelected()) abandonCount++;
@@ -300,7 +308,10 @@ public class Window implements ActionListener {
                 Setting.isHorizontal = true;
 
             //开始选择
+            progressBar.setMinimum(0);
+            progressBar.setMaximum((int) Math.pow(2, Setting.featureNumber) - 1);
             try {
+
                 System.out.println("开始选择");
                 new MySelector().start(Setting.featureNumber, Setting.filePath, Setting.fileType, Setting.maxSelectFeatureNumber, Setting.threshold, Setting.isHorizontal, Setting.top);
                 System.out.println("选择结束");

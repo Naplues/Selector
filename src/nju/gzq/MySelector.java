@@ -14,9 +14,9 @@ public class MySelector extends Selector {
         else if (Setting.metric.equals("MAP"))
             return Evaluation.getMAP(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
         else if (Setting.metric.equals("F1"))
-            return Evaluation.getF1(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            return Evaluation.getF1(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
         else if (Setting.metric.equals("AUC"))
-            return Evaluation.getAUC(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            return Evaluation.getAUC(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
         else return .0;
     }
 }

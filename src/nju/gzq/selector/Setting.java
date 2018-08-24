@@ -1,5 +1,9 @@
 package nju.gzq.selector;
 
+import nju.gzq.base.BaseProject;
+
+import java.io.File;
+
 public class Setting {
     //度量计算参数
     public static String dataPath = "";
@@ -20,4 +24,31 @@ public class Setting {
     public static boolean isHorizontal = true;
 
     public static String resultString = "";
+
+    public static BaseProject[] getProjects() {
+
+        File[] projects = new File(dataPath).listFiles();
+        BaseProject[] baseProjects = new BaseProject[projects.length];
+        for (int i = 0; i < baseProjects.length; i++)
+            baseProjects[i] = new BaseProject(projects[i].getPath(), labelIndex, abandonIndex);
+        return baseProjects;
+    }
+
+    public static void print() {
+        System.out.println("dataPath: " + dataPath);
+        System.out.println("labelIndex: " + labelIndex);
+        System.out.print("abandonIndex: ");
+        for (int i = 0; i < abandonIndex.length; i++) System.out.print(abandonIndex[i] + " ");
+        System.out.println();
+        System.out.println("metric: " + metric);
+        System.out.println("combination: " + combination);
+        System.out.println("positiveName: " + positiveName);
+        System.out.println("featureNumber: " + featureNumber);
+        System.out.println("maxSelectFeatureNumber: " + maxSelectFeatureNumber);
+        System.out.println("threshold: " + threshold);
+        System.out.println("top: " + top);
+        System.out.println("filePath: " + filePath);
+        System.out.println("fileType: " + fileType);
+        System.out.println();
+    }
 }

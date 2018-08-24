@@ -1,6 +1,7 @@
 package nju.gzq.selector;
 
 import nju.gzq.base.BaseProject;
+import nju.gzq.gui.Window;
 
 import java.util.*;
 
@@ -52,7 +53,6 @@ public class Selector {
         Graphviz.visual(result, isHorizontal, filePath, type, featureNames, top);
     }
 
-
     /**
      * 探索新特征
      *
@@ -62,7 +62,9 @@ public class Selector {
         // 获取候选特征集合
         Set<Object> candidatesSet = parent.getFeatureCandidates();
         Object[] candidates = candidatesSet.toArray();
-        if (candidates.length == 0) return;
+        if (candidates.length == 0) {
+            return;
+        }
         for (Object candidate : candidates) {
             // 获取新的特征集合
             Set<Object> usedSet = parent.getFeatureUsed();

@@ -5,6 +5,7 @@ import nju.gzq.advance.plc.Ranking;
 import nju.gzq.base.BaseProject;
 import nju.gzq.base.BaseRanking;
 import nju.gzq.evaluation.metrics.*;
+import nju.gzq.gui.Window;
 
 import java.io.File;
 
@@ -91,21 +92,18 @@ public class Evaluation {
      * 获取数据集上所有项目的平均F1值
      *
      * @param features
-     * @param dataPath
      * @param labelIndex   类别索引
      * @param abandonIndex 遗弃索引
      * @return
      */
-    public static double getF1(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) {
+    public static double getF1(Integer[] features, BaseProject[] baseProjects, int combination, int labelIndex, int... abandonIndex) {
         Double value = .0;
 
-        File[] projects = new File(dataPath).listFiles();
-        for (File p : projects) {
-            BaseProject project = new BaseProject(p.getPath(), labelIndex, abandonIndex);
+        for (BaseProject project : baseProjects) {
             project.setFeatures(BaseRanking.rankByFeature(project, combination, BaseRanking.RANK_DESC, features));  //Ranking
             value += F1.getValue(project.getFeatures());
         }
-        value /= projects.length;
+        value /= baseProjects.length;
         System.out.println("F1: " + value);
         return value;
     }
@@ -114,21 +112,18 @@ public class Evaluation {
      * 获取数据集上所有项目的平均AUC值
      *
      * @param features
-     * @param dataPath
+     * @param baseProjects
      * @param labelIndex   类别索引
      * @param abandonIndex 遗弃索引
      * @return
      */
-    public static double getAUC(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) {
+    public static double getAUC(Integer[] features, BaseProject[] baseProjects, int combination, int labelIndex, int... abandonIndex) {
         double auc = .0;
 
-        File[] projects = new File(dataPath).listFiles();
-        for (File p : projects) {
-            BaseProject project = new BaseProject(p.getPath(), labelIndex, abandonIndex);
-            auc += AUC.getValue(features, project.getFeatures(), combination);
-        }
-        auc /= projects.length;
+        for (BaseProject project : baseProjects) auc += AUC.getValue(features, project.getFeatures(), combination);
+        auc /= baseProjects.length;
         System.out.println("AUC: " + auc);
+        Window.resultArea.append("AUC: " + auc);
         return auc;
     }
 }
