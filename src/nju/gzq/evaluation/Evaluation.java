@@ -26,7 +26,7 @@ public class Evaluation {
      * @param abandonIndex
      * @return
      */
-    public static double getRecall(Integer[] features, String dataPath, int k, int combination, int labelIndex, int... abandonIndex) {
+    public static double getRecall(Integer[] features, String dataPath, int k, int combination, int labelIndex, int... abandonIndex) throws Exception {
         double recall = .0;
 
         File[] projects = new File(dataPath).listFiles();
@@ -36,7 +36,9 @@ public class Evaluation {
             recall += Recall.getValue(project.getFeatures(), k, project.getRevisionNumber());
         }
         recall /= projects.length;
-        System.out.println("Recall@" + k + ": " + recall);
+        String tempLog = "Path " + Window.currentProgress + ", Recall@" + k + ": " + recall + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
         return recall;
     }
 
@@ -50,7 +52,7 @@ public class Evaluation {
      * @param abandonIndex
      * @return
      */
-    public static double getMRR(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) {
+    public static double getMRR(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) throws Exception {
         double mrr = .0;
 
         File[] projects = new File(dataPath).listFiles();
@@ -60,7 +62,9 @@ public class Evaluation {
             mrr += MRR.getValue(project.getFeatures(), project.getRevisionNumber());
         }
         mrr /= projects.length;
-        System.out.println("MRR: " + mrr);
+        String tempLog = "Path " + Window.currentProgress + ", MRR: " + mrr + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
         return mrr;
     }
 
@@ -74,7 +78,7 @@ public class Evaluation {
      * @param abandonIndex
      * @return
      */
-    public static double getMAP(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) {
+    public static double getMAP(Integer[] features, String dataPath, int combination, int labelIndex, int... abandonIndex) throws Exception {
         double map = .0;
 
         File[] projects = new File(dataPath).listFiles();
@@ -84,7 +88,9 @@ public class Evaluation {
             map += MAP.getValue(project.getFeatures(), project.getRevisionNumber());
         }
         map /= projects.length;
-        System.out.println("MAP: " + map);
+        String tempLog = "Path " + Window.currentProgress + ", MAP: " + map + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
         return map;
     }
 
@@ -101,10 +107,12 @@ public class Evaluation {
 
         for (BaseProject project : baseProjects) {
             project.setFeatures(BaseRanking.rankByFeature(project, combination, BaseRanking.RANK_DESC, features));  //Ranking
-            value += F1.getValue(project.getFeatures());
+            value += F1.getValue(project.getFeatures(), 0.5);
         }
         value /= baseProjects.length;
-        System.out.println("F1: " + value);
+        String tempLog = "Path " + Window.currentProgress + ", F1: " + value + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
         return value;
     }
 
@@ -122,8 +130,9 @@ public class Evaluation {
 
         for (BaseProject project : baseProjects) auc += AUC.getValue(features, project.getFeatures(), combination);
         auc /= baseProjects.length;
-        System.out.println("AUC: " + auc);
-        Window.resultArea.append("AUC: " + auc);
+        String tempLog = "Path " + Window.currentProgress + ", AUC: " + auc + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
         return auc;
     }
 }

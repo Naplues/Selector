@@ -32,7 +32,7 @@ public class BaseFeature {
      * @param valueString Numeric value of string form
      * @param labelIndex  label index in valueString in array
      */
-    public BaseFeature(String[] valueString, int labelIndex, int... abandonIndex) {
+    public BaseFeature(String[] valueString, int labelIndex, int... abandonIndex) throws Exception {
         // assign feature value
         featureValue = new Double[valueString.length - 1 - abandonIndex.length];
         for (int i = 0, j = 0; i < featureValue.length; j++) {
@@ -54,6 +54,9 @@ public class BaseFeature {
         }
 
         // assign label value
+        if (!valueString[labelIndex].equals(Setting.positiveName) && !valueString[labelIndex].equals(Setting.negativeName)) {
+            throw new Exception("label value error");
+        }
         this.label = valueString[labelIndex].equals(Setting.positiveName);
     }
 

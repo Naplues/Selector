@@ -29,7 +29,7 @@ public class BaseProject {
      * @param labelIndex   标记索引值
      * @param abandonIndex 遗弃索引值
      */
-    public BaseProject(String path, int labelIndex, int... abandonIndex) {
+    public BaseProject(String path, int labelIndex, int... abandonIndex) throws Exception {
         projectName = new File(path).getName();
         File[] dataFiles = new File(path).listFiles(); // all data files in a project
         dataFileNames = new String[dataFiles.length];
@@ -96,5 +96,12 @@ public class BaseProject {
             //useful feature
             featureNames[i++] = feature[j].replace("\"", "");
         }
+    }
+
+    /**
+     * 后续工作,为下次读取项目做准备
+     */
+    public static void finish() {
+        featureNames = null;
     }
 }

@@ -1,6 +1,7 @@
 package nju.gzq.gui;
 
 import nju.gzq.MySelector;
+import nju.gzq.base.BaseProject;
 import nju.gzq.selector.FileHandle;
 import nju.gzq.selector.Setting;
 
@@ -11,8 +12,6 @@ import java.io.File;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 
 public class Window implements ActionListener {
@@ -29,6 +28,15 @@ public class Window implements ActionListener {
     public static JPanel panel1 = new JPanel(); // 1
     public static JPanel panel2 = new JPanel(); // 2
     public static JPanel featurePanel = new JPanel(); // 特征面板
+    public static JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
+
+    //结果区域
+    public static JPanel progressPanel = new JPanel(); //进度面板
+    public static JTextArea logArea = new JTextArea(20, 42);
+    public static JScrollPane logPanel = new JScrollPane(logArea); //日志面板
+    public static JTextArea resultArea = new JTextArea(20, 42);
+    public static JScrollPane resultPanel = new JScrollPane(resultArea); //结果面板
+
 
     // 操作按钮
     public static JButton openButton = new JButton("打开数据集文件夹");
@@ -39,7 +47,7 @@ public class Window implements ActionListener {
 
     // 标签
     public static JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
-    public static JLabel proInfo = new JLabel("Path(s):0");
+    public static JLabel proInfo = new JLabel("Path(s): 0");
     public static JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
     public static JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
     public static JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
@@ -70,19 +78,21 @@ public class Window implements ActionListener {
     //进度条
     public static JProgressBar progressBar = new JProgressBar();
 
-    //结果区域
-    public static JTextArea resultArea = new JTextArea(20, 88);
-    public static JScrollPane jsp = new JScrollPane(resultArea);
-    public static JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
-
 
     //数据变量
     public static String[] attributeNames;
     public static int[] selectedIndices;
     public static String dataPath;
+    public static StringBuffer log = new StringBuffer();
     public static int currentProgress = 0;
+    private static Timer timer;
+
+    SwingWorker<Void, Integer> swingWorker;
 
     public Window() {
+
+        timer = new Timer(50, this);
+
         placeComponents(); // 摆放组件
     }
 
@@ -104,8 +114,7 @@ public class Window implements ActionListener {
         operatePanel.add(allButton);
         operatePanel.add(reverseButton);
         operatePanel.add(startButton);
-        operatePanel.add(progressBar);
-        operatePanel.add(proInfo);
+
         progressBar.setMinimum(0);
         progressBar.setStringPainted(true);
         allButton.setEnabled(false);
@@ -153,6 +162,8 @@ public class Window implements ActionListener {
         metricComboBox.addItem("F1");
         metricComboBox.addItem("AUC");
         metricComboBox.addItem("Recall@1");
+        metricComboBox.addItem("Recall@5");
+        metricComboBox.addItem("Recall@10");
         metricComboBox.addItem("MRR");
         metricComboBox.addItem("MAP");
 
@@ -176,12 +187,23 @@ public class Window implements ActionListener {
         panel2.add(positionComboBox);
         panel2.add(labelText);
 
-
-        // 结果输出框
+        // 结果输出区域
+        progressPanel.add(new JLabel("探索路径百分比: "));
+        progressPanel.add(progressBar);
+        progressPanel.add(proInfo);
+        logArea.setLineWrap(true);
         resultArea.setLineWrap(true);
-        bottomPanel.add(jsp, BorderLayout.CENTER);
+        bottomPanel.setLayout(new BorderLayout());
+        bottomPanel.add(progressPanel, BorderLayout.NORTH);
+        bottomPanel.add(logPanel, BorderLayout.WEST);
+        bottomPanel.add(resultPanel, BorderLayout.EAST);
         bottomPanel.setBorder(new TitledBorder(null, "Top (K) 输出结果(导出图片请先安装Graphviz)", TitledBorder.DEFAULT_JUSTIFICATION,
                 TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        logPanel.setBorder(new TitledBorder(null, "特征组合日志", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        resultPanel.setBorder(new TitledBorder(null, "组合结果", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+
 
         // 添加事件监听
         fileTypeComboBox.addActionListener(this::actionPerformed);
@@ -191,21 +213,14 @@ public class Window implements ActionListener {
         reverseButton.addActionListener(this::actionPerformed);
         openButton.addActionListener(this::actionPerformed);
 
-        // 添加进度改变通知
-        progressBar.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                System.out.println("当前进度值: " + progressBar.getValue() + "; " +
-                        "进度百分比: " + progressBar.getPercentComplete());
-            }
-        });
         frame.setVisible(true);// 设置界面可见
     }
 
     /**
-     * 动作实现
+     * 事件动作实现
      */
     public void actionPerformed(ActionEvent e) {
+
         //////////////////////////////////////////////////////////选择数据集
         if (e.getSource() == openButton) {
             JFileChooser fileChooser = new JFileChooser();
@@ -273,7 +288,7 @@ public class Window implements ActionListener {
 
         /////////////////////////////////////////////////////////开始选择事件
         if (e.getSource() == startButton) {
-
+            timer.restart();
             //设置运行配置
             Setting.dataPath = dataPath;
 
@@ -282,10 +297,14 @@ public class Window implements ActionListener {
                 Setting.labelIndex = Integer.parseInt(temps[0]);
                 Setting.positiveName = temps[1];
                 Setting.negativeName = temps[2];
-            } catch (ArrayIndexOutOfBoundsException ex) {
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "请输入正确的标记特征索引值格式:index;true;false!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
             }
-
+            if (!checkBoxes[Setting.labelIndex].isSelected()) {
+                JOptionPane.showMessageDialog(null, "请勾选标记属性: " + checkBoxes[Setting.labelIndex].getText() + "!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             int abandonCount = 0;
             for (int i = 0; i < checkBoxes.length; i++) if (!checkBoxes[i].isSelected()) abandonCount++;
 
@@ -297,9 +316,18 @@ public class Window implements ActionListener {
             Setting.combination = combinationComboBox.getSelectedIndex();
 
             Setting.featureNumber = Integer.parseInt(featureNumberText.getText());
-            Setting.maxSelectFeatureNumber = Integer.parseInt(maxSelectFeatureNumberText.getText());
-            Setting.threshold = Double.parseDouble(thresholdText.getText());
-            Setting.top = Integer.parseInt(topText.getText());
+            if (Setting.featureNumber == 0) {
+                JOptionPane.showMessageDialog(null, "请选择标记属性和至少一个特征!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            try {
+                Setting.maxSelectFeatureNumber = Integer.parseInt(maxSelectFeatureNumberText.getText());
+                Setting.threshold = Double.parseDouble(thresholdText.getText());
+                Setting.top = Integer.parseInt(topText.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "请在[最大特征数, 阈值栏, Top(k)] 中输入数字!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             Setting.filePath = filePathText.getText();
             Setting.fileType = fileTypeComboBox.getSelectedItem().toString();
             if (positionComboBox.getSelectedIndex() == 0)
@@ -307,18 +335,47 @@ public class Window implements ActionListener {
             else
                 Setting.isHorizontal = true;
 
+            try {
+                Setting.setProjects();
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "请不要选择非数值型属性!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "请指定正确的标记索引或检查索引值!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             //开始选择
             progressBar.setMinimum(0);
             progressBar.setMaximum((int) Math.pow(2, Setting.featureNumber) - 1);
-            try {
 
-                System.out.println("开始选择");
-                new MySelector().start(Setting.featureNumber, Setting.filePath, Setting.fileType, Setting.maxSelectFeatureNumber, Setting.threshold, Setting.isHorizontal, Setting.top);
-                System.out.println("选择结束");
+            try {
+                logArea.setText("");
+                resultArea.setText("");
+                progressBar.setValue(0);
+                proInfo.setText("Path(s): 0");
+                currentProgress = 0;
+                swingWorker = new SwingWorker<Void, Integer>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        new MySelector().start(Setting.featureNumber, Setting.filePath, Setting.fileType, Setting.maxSelectFeatureNumber, Setting.threshold, Setting.isHorizontal, Setting.top);
+                        BaseProject.finish();
+                        timer.stop();
+                        return null;
+                    }
+                };
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "请检查数据集格式,或者选择了非数值型属性!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "请检查数据集格式!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                return;
             }
+            swingWorker.execute();
+        }
+
+        if (e.getSource() == timer) {
+            proInfo.setText("Path(s): " + currentProgress + "/" + progressBar.getMaximum());
+            progressBar.setValue(currentProgress);
             resultArea.setText(Setting.resultString);
         }
     }
 }
+
+

@@ -6,18 +6,28 @@ import nju.gzq.selector.Setting;
 
 public class MySelector extends Selector {
     public double getValue(Integer[] features) {
-
-        if (Setting.metric.equals("Recall@1"))
-            return Evaluation.getRecall(features, Setting.dataPath, 1, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-        else if (Setting.metric.equals("MRR"))
-            return Evaluation.getMRR(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-        else if (Setting.metric.equals("MAP"))
-            return Evaluation.getMAP(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-        else if (Setting.metric.equals("F1"))
-            return Evaluation.getF1(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-        else if (Setting.metric.equals("AUC"))
-            return Evaluation.getAUC(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-        else return .0;
+        double value = .0;
+        try {
+            if (Setting.metric.equals("Recall@1"))
+                value = Evaluation.getRecall(features, Setting.dataPath, 1, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("Recall@5"))
+                value = Evaluation.getRecall(features, Setting.dataPath, 5, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("Recall@10"))
+                value = Evaluation.getRecall(features, Setting.dataPath, 10, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("MRR"))
+                value = Evaluation.getMRR(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("MAP"))
+                value = Evaluation.getMAP(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("F1"))
+                value = Evaluation.getF1(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("AUC"))
+                value = Evaluation.getAUC(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else value = .0;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            return value;
+        }
     }
 }
 

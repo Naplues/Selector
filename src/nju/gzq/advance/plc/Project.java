@@ -18,7 +18,7 @@ public class Project extends BaseProject {
      * @param labelIndex
      * @param abandonIndex
      */
-    public Project(String path, int labelIndex, int... abandonIndex) {
+    public Project(String path, int labelIndex, int... abandonIndex) throws Exception {
         super(path, labelIndex, abandonIndex);
         revisionNumber = features.length;
         selectOracleFeature();  //选择有oracle的bucket

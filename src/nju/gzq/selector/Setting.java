@@ -25,12 +25,17 @@ public class Setting {
 
     public static String resultString = "";
 
-    public static BaseProject[] getProjects() {
+    //项目对象
+    public static BaseProject[] baseProjects;
 
+    public static void setProjects() throws Exception {
         File[] projects = new File(dataPath).listFiles();
-        BaseProject[] baseProjects = new BaseProject[projects.length];
+        baseProjects = new BaseProject[projects.length];
         for (int i = 0; i < baseProjects.length; i++)
             baseProjects[i] = new BaseProject(projects[i].getPath(), labelIndex, abandonIndex);
+    }
+
+    public static BaseProject[] getProjects() {
         return baseProjects;
     }
 
