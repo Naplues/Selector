@@ -75,7 +75,11 @@ public class Graphviz {
         for (String link : links) string += link;
 
         //////////////////////////////////////////// 3. 输出叶子节点及特征频率值 //////////////////////////////////////////
-        String summary = "";
+        String summary = "=============================\nFeature maps (Feature index: Feature name)\n";
+        for (int i = 0; i < featureNames.length; i++) {
+            summary += i + ": " + featureNames[i] + "\n";
+        }
+        summary += "=============================\n";
         summary += "Top " + top + " paths:\n";
         for (int i = 0; i < top; i++) summary += leaves[i] + "\n";
         summary += "=============================\n";

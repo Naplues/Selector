@@ -7,29 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/d2/apns_0c1.arff.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/d2/apns_153.arff.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/MySelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/MySelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/advance/plc/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/advance/plc/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/base/BaseProject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/Evaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/Evaluation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/metrics/F1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/evaluation/metrics/F1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Selector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Setting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/selector/Setting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/MySelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/MySelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/advance/plc/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/advance/plc/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/base/BaseProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/gui/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/selector/Selector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/selector/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/selector/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,21 +22,17 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="228">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Window.java">
+      <file leaf-file-name="Graphviz.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="358" column="70" selection-start-line="358" selection-start-column="70" selection-end-line="358" selection-end-column="70" />
-              <folding>
-                <element signature="e#14952#15534#0" expanded="true" />
-                <element signature="e#15533#15534#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="343">
+              <caret line="81" column="53" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -66,8 +40,8 @@
       <file leaf-file-name="Evaluation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="135" column="19" lean-forward="true" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+            <state relative-caret-position="2432">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,6 +63,7 @@
       <find>System</find>
       <find>resultArea</find>
       <find>bottomPanel</find>
+      <find>Setting</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,7 +95,6 @@
         <option value="$PROJECT_DIR$/src/nju/gzq/selector/FileHandle.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/MtSelecotr.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/MySelecotr.java" />
-        <option value="$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/AUC.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/Main.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/selector/Node.java" />
@@ -137,6 +111,7 @@
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/Test.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java" />
         <option value="$PROJECT_DIR$/src/nju/gzq/gui/Window.java" />
+        <option value="$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java" />
       </list>
     </option>
   </component>
@@ -154,7 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,27 +158,6 @@
               <item name="Selector" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selector" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selector" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gzq" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Selector" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selector" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gzq" type="462c0819:PsiDirectoryNode" />
               <item name="selector" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -211,7 +165,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,31 +313,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3278867" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23856209" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23855756" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908162" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15110247" />
+      <window_info anchor="bottom" id="EvoSuite" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994452" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="EvoSuite" order="9" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994452" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -394,31 +348,31 @@
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="EvoSuite" order="9" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1997226" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17315175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994452" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908162" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32897604" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -558,25 +512,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/MyPrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#1818#1819#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/MyPrintStream.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/metrics/F1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -622,31 +558,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/TimerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#1291#2240#0" expanded="true" />
-            <element signature="e#2239#2240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="61" selection-end-column="30" />
-          <folding>
-            <element signature="e#1285#2234#0" expanded="true" />
-            <element signature="e#2233#2234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/TimerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Setting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -659,17 +572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/evaluation/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="135" column="19" lean-forward="true" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+        <state relative-caret-position="2432">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -678,12 +584,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="358" column="70" selection-start-line="358" selection-start-column="70" selection-end-line="358" selection-end-column="70" />
-          <folding>
-            <element signature="e#14952#15534#0" expanded="true" />
-            <element signature="e#15533#15534#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="457">
+          <caret line="350" column="17" lean-forward="true" selection-start-line="350" selection-start-column="17" selection-end-line="350" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nju/gzq/selector/Graphviz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="81" column="53" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="53" />
         </state>
       </provider>
     </entry>
