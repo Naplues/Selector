@@ -8,6 +8,8 @@ import nju.gzq.selector.Setting;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 import javax.swing.*;
@@ -74,6 +76,12 @@ public class Window implements ActionListener {
     public static JTextArea resultArea = new JTextArea(20, 42);
     private JScrollPane resultPanel = new JScrollPane(resultArea); //结果面板
 
+    // 菜单
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu fileMenu = new JMenu("文件(F)");
+    private JMenu helpMenu = new JMenu("帮助(H)");
+    private JMenuItem openMenuItem = new JMenuItem("打开数据集");
+    private JMenuItem helpMenuItem = new JMenuItem("帮助");
     //计时器
     private Timer timer = new Timer(50, this);
 
@@ -157,6 +165,13 @@ public class Window implements ActionListener {
         displayPanel.add(progressPanel, BorderLayout.NORTH);
         displayPanel.add(logPanel, BorderLayout.WEST);
         displayPanel.add(resultPanel, BorderLayout.EAST);
+
+        // 菜单
+        frame.setJMenuBar(menuBar);
+        menuBar.add(fileMenu);
+        menuBar.add(helpMenu);
+        fileMenu.add(openMenuItem);
+        helpMenu.add(helpMenuItem);
     }
 
     /**
@@ -206,6 +221,10 @@ public class Window implements ActionListener {
 
         positionComboBox.addItem("垂直");
         positionComboBox.addItem("水平");
+
+        // 菜单快捷键设置
+        openMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
+        helpMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_MASK));
     }
 
     /**
@@ -218,6 +237,9 @@ public class Window implements ActionListener {
         allButton.addActionListener(this::actionPerformed);
         reverseButton.addActionListener(this::actionPerformed);
         openButton.addActionListener(this::actionPerformed);
+
+        openMenuItem.addActionListener(this::actionPerformed);
+        helpMenuItem.addActionListener(this::actionPerformed);
     }
 
     /**
@@ -228,7 +250,7 @@ public class Window implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         //////////////////////////////////////////////////////////打开数据集文件夹事件///////////////////////////////////////
-        if (e.getSource() == openButton) {
+        if (e.getSource() == openButton || e.getSource() == openMenuItem) {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);  //only show directories
             int value = fileChooser.showDialog(new JLabel(), "选择数据集文件夹");
@@ -381,6 +403,36 @@ public class Window implements ActionListener {
             proInfo.setText("Path(s): " + currentProgress + "/" + progressBar.getMaximum());
             progressBar.setValue(currentProgress);
             resultArea.setText(Setting.resultString);
+        }
+
+        // 显示帮助信息
+        if (e.getSource() == helpMenuItem) {
+            JFrame helpFrame = new JFrame("帮助信息");
+            helpFrame.setSize(500, 400);
+            helpFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            helpFrame.setLocationRelativeTo(null); // 设置窗体居中显示
+            JPanel panel = new JPanel();
+
+            String textString = "数据文件说明\n";
+            textString += "1. 数据集文件类型: .csv格式\n";
+            textString += "2. 数据集文件夹格式: 一个数据集文件夹包含若干个子文件夹, 每个子文件夹代表一个项目, 每个项目文件夹包含若干个csv数据文件\n\n\n";
+            textString += "   数据集样例\n";
+            textString += "   data\n";
+            textString += "       -> project_1\n";
+            textString += "                   -> version_1.csv\n";
+            textString += "                   -> version_2.csv\n";
+            textString += "       -> project_1\n";
+            textString += "                   -> version_1.csv\n";
+            textString += "   \n";
+
+            JTextArea textArea = new JTextArea(textString, 23, 44);
+            textArea.setLineWrap(true);
+            textArea.setEditable(false);
+            JScrollPane jsp = new JScrollPane(textArea);
+            panel.add(jsp);
+            helpFrame.setContentPane(panel);
+            helpFrame.setResizable(false);
+            helpFrame.setVisible(true);
         }
     }
 }
