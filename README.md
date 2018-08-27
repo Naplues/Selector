@@ -10,8 +10,11 @@ Feature Selector: To find excellent feature combinations according to various me
 该包内实现了部分度量的计算，包括Recall@k, MRR, MAP, F1, AUC 5种, 统一通过Evaluation 类来调用各个度量.
 后续可以继续添加新的度量.
 
-## package: jnu.gzq.base
+## package: nju.gzq.base
 该包内实现了数据集在运行时的存储结构和一些排序过程.
+
+## package: nju.gzq.gui
+该包实现了工具界面显示
 
 ## demo: 计算最优F1组合
 ```java
@@ -50,6 +53,9 @@ class F1Selector extends Selector {
     }
 }
 ```
+
+## GUI
+![GUI](https://github.com/Naplues/Selector/blob/master/assert/gui.png "GUI")
 
 ## Sample Result
 ![Algorithm](https://github.com/Naplues/Selector/blob/master/assert/f1.svg "Algorithm")

@@ -374,6 +374,7 @@ public class Window implements ActionListener {
             swingWorker.execute();
         }
 
+        // 计时器刷新界面界面
         if (e.getSource() == timer) {
             proInfo.setText("Path(s): " + currentProgress + "/" + progressBar.getMaximum());
             progressBar.setValue(currentProgress);
