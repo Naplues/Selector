@@ -13,71 +13,69 @@ import java.io.File;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-
 public class Window implements ActionListener {
-    // 创建 JFrame 实例
-    public JFrame frame = new JFrame("Feature Selector");
+    // JFrame
+    private JFrame frame = new JFrame("Feature Selector");
+    // 面板实例
+    private JPanel panel = new JPanel(); //主面板
+    private JPanel operatePanel = new JPanel(); // 1.操作面板
+    private JPanel contentPanel = new JPanel(); // 2.设置面板
+    private JPanel displayPanel = new JPanel(); // 3.显示面板
 
-    public static JPanel panel = new JPanel();
-    public static JPanel leftPanel = new JPanel();
-    public static JPanel rightPanel = new JPanel();
-    public static JPanel bottomPanel = new JPanel();
-    public static JPanel operatePanel = new JPanel(); // 操作面板
-    public static JPanel contentPanel = new JPanel(); // 内容面板
-    public static JPanel argsPanel = new JPanel(); //参数面板
-    public static JPanel panel1 = new JPanel(); // 1
-    public static JPanel panel2 = new JPanel(); // 2
-    public static JPanel featurePanel = new JPanel(); // 特征面板
-    public static JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
+    //1.操作面板 组件
+    private JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
+    private JButton openButton = new JButton("打开数据集文件夹");
+    private JButton allButton = new JButton("全选");
+    private JButton reverseButton = new JButton("反选");
+    private JButton startButton = new JButton("开始选择");
 
-    //结果区域
-    public static JPanel progressPanel = new JPanel(); //进度面板
-    public static JTextArea logArea = new JTextArea(20, 42);
-    public static JScrollPane logPanel = new JScrollPane(logArea); //日志面板
-    public static JTextArea resultArea = new JTextArea(20, 42);
-    public static JScrollPane resultPanel = new JScrollPane(resultArea); //结果面板
-
-
-    // 操作按钮
-    public static JButton openButton = new JButton("打开数据集文件夹");
-    public static JButton allButton = new JButton("全选");
-    public static JButton reverseButton = new JButton("反选");
-    public static JButton startButton = new JButton("开始选择");
-
+    //2.设置面板 组件
+    private JPanel argsPanel = new JPanel(); //参数面板
+    private JPanel argsLabelPanel = new JPanel(); // 参数标签面板
+    private JPanel argsValuePanel = new JPanel(); // 参数值面板
+    private JPanel featurePanel = new JPanel(); // 特征面板
+    private JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
 
     // 标签
-    public static JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
-    public static JLabel proInfo = new JLabel("Path(s): 0");
-    public static JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
-    public static JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
-    public static JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
-    public static JLabel metric = new JLabel("度量选择", JLabel.CENTER);
-    public static JLabel combination = new JLabel("组合方式", JLabel.CENTER);
-    public static JLabel top = new JLabel("Top(K)组合结果", JLabel.CENTER);
-    public static JLabel filePath = new JLabel("输出文件路径", JLabel.CENTER);
-    public static JLabel fileType = new JLabel("输出文件类型", JLabel.CENTER);
-    public static JLabel position = new JLabel("树形方向", JLabel.CENTER);
-    public static JLabel label = new JLabel("标记特征索引及取值(e.g. 10;true;false)", JLabel.CENTER);
-
+    private JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
+    private JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
+    private JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
+    private JLabel metric = new JLabel("度量选择", JLabel.CENTER);
+    private JLabel combination = new JLabel("组合方式", JLabel.CENTER);
+    private JLabel top = new JLabel("Top(K)组合结果", JLabel.CENTER);
+    private JLabel filePath = new JLabel("输出文件路径", JLabel.CENTER);
+    private JLabel fileType = new JLabel("输出文件类型", JLabel.CENTER);
+    private JLabel position = new JLabel("树形方向", JLabel.CENTER);
+    private JLabel label = new JLabel("标记特征索引及取值(e.g. 10;true;false)", JLabel.CENTER);
 
     // 输入框
-    public static JTextField featureNumberText = new JTextField(15);
-    public static JTextField maxSelectFeatureNumberText = new JTextField(15);
-    public static JTextField thresholdText = new JTextField(15);
-    public static JComboBox<String> metricComboBox = new JComboBox<>();
-    public static JComboBox<String> combinationComboBox = new JComboBox<>();
-    public static JTextField topText = new JTextField(15);
-    public static JTextField filePathText = new JTextField(15);
-    public static JComboBox<String> fileTypeComboBox = new JComboBox<>();
-    public static JComboBox<String> positionComboBox = new JComboBox<>();
-    public static JTextField labelText = new JTextField(15);
+    private JTextField featureNumberText = new JTextField("0", 15);
+    private JTextField maxSelectFeatureNumberText = new JTextField("0", 15);
+    private JTextField thresholdText = new JTextField("0.0", 15);
+    private JComboBox<String> metricComboBox = new JComboBox<>();
+    private JComboBox<String> combinationComboBox = new JComboBox<>();
+    private JTextField topText = new JTextField("10", 15);
+    private JTextField filePathText = new JTextField(15);
+    private JComboBox<String> fileTypeComboBox = new JComboBox<>();
+    private JComboBox<String> positionComboBox = new JComboBox<>();
+    private JTextField labelText = new JTextField(15);
 
     //特征复选
-    public static JCheckBox[] checkBoxes;
+    private JCheckBox[] checkBoxes;
 
-    //进度条
-    public static JProgressBar progressBar = new JProgressBar();
+    // 3.显示面板 组件
+    private JPanel progressPanel = new JPanel(); //进度面板
 
+    private JProgressBar progressBar = new JProgressBar(JProgressBar.HORIZONTAL, 0, 100); //进度条
+    private JLabel proInfo = new JLabel("Path(s): 0/0");
+
+    public static JTextArea logArea = new JTextArea(20, 42);
+    private JScrollPane logPanel = new JScrollPane(logArea); //日志面板
+    public static JTextArea resultArea = new JTextArea(20, 42);
+    private JScrollPane resultPanel = new JScrollPane(resultArea); //结果面板
+
+    //计时器
+    private Timer timer = new Timer(50, this);
 
     //数据变量
     public static String[] attributeNames;
@@ -85,79 +83,109 @@ public class Window implements ActionListener {
     public static String dataPath;
     public static StringBuffer log = new StringBuffer();
     public static int currentProgress = 0;
-    private static Timer timer;
 
-    SwingWorker<Void, Integer> swingWorker;
+    // 耗时任务线程
+    private SwingWorker<Void, Integer> swingWorker;
 
     public Window() {
-
-        timer = new Timer(50, this);
-
         placeComponents(); // 摆放组件
+        setComponentStyle(); // 设置组件样式
+        addEventListener(); // 添加事件监听器
+        frame.setVisible(true);// 设置界面可见
     }
 
+    /**
+     * 放置组件
+     */
     public void placeComponents() {
-        frame.setSize(1000, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null); // 设置窗体居中显示
-        frame.add(Window.panel); // 添加面板
+        // 各面板布局
         panel.setLayout(new BorderLayout()); // 设置默认BorderLayout布局
+        contentPanel.setLayout(new GridLayout(1, 2)); // 设置布局
+        argsPanel.setLayout(new GridLayout(1, 2));
+        argsLabelPanel.setLayout(new GridLayout(10, 1)); // 参数标签布局
+        argsValuePanel.setLayout(new GridLayout(10, 1)); // 参数值布局
+        featurePanel.setLayout(new GridLayout(10, 2)); // 特征布局
+        displayPanel.setLayout(new BorderLayout());
+
+        //面板位置
+        frame.add(panel); // 主面板
         panel.add(operatePanel, BorderLayout.NORTH); // 操作面板
-        panel.add(contentPanel, BorderLayout.CENTER); // 内容面板
-        panel.add(leftPanel, BorderLayout.WEST);
-        panel.add(rightPanel, BorderLayout.EAST);
-        panel.add(bottomPanel, BorderLayout.SOUTH);
-        // 操作面板
-        operatePanel.setBorder(BorderFactory.createLineBorder(new Color(12, 128, 32)));
+        panel.add(contentPanel, BorderLayout.CENTER); // 设置面板
+        panel.add(displayPanel, BorderLayout.SOUTH); // 显示面板
+
+        // 1.操作面板组件
         operatePanel.add(info);
         operatePanel.add(openButton);
         operatePanel.add(allButton);
         operatePanel.add(reverseButton);
         operatePanel.add(startButton);
 
-        progressBar.setMinimum(0);
+        // 2.设置面板组件
+        contentPanel.add(argsPanel); //参数面板
+        contentPanel.add(jspFeaturePanel); //特征面板
+
+        argsPanel.add(argsLabelPanel);
+        argsPanel.add(argsValuePanel);
+
+        argsLabelPanel.add(featureNumber);
+        argsLabelPanel.add(maxSelectFeatureNumber);
+        argsLabelPanel.add(threshold);
+        argsLabelPanel.add(metric);
+        argsLabelPanel.add(combination);
+        argsLabelPanel.add(top);
+        argsLabelPanel.add(filePath);
+        argsLabelPanel.add(fileType);
+        argsLabelPanel.add(position);
+        argsLabelPanel.add(label);
+
+        argsValuePanel.add(featureNumberText);
+        argsValuePanel.add(maxSelectFeatureNumberText);
+        argsValuePanel.add(thresholdText);
+        argsValuePanel.add(metricComboBox);
+        argsValuePanel.add(combinationComboBox);
+        argsValuePanel.add(topText);
+        argsValuePanel.add(filePathText);
+        argsValuePanel.add(fileTypeComboBox);
+        argsValuePanel.add(positionComboBox);
+        argsValuePanel.add(labelText);
+
+        // 3.显示面板组件
+        progressPanel.add(new JLabel("探索路径百分比: "));
+        progressPanel.add(progressBar);
+        progressPanel.add(proInfo);
+
+        displayPanel.add(progressPanel, BorderLayout.NORTH);
+        displayPanel.add(logPanel, BorderLayout.WEST);
+        displayPanel.add(resultPanel, BorderLayout.EAST);
+    }
+
+    /**
+     * 设置组件样式
+     */
+    public void setComponentStyle() {
+        frame.setSize(1000, 800);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null); // 设置窗体居中显示
+
+        operatePanel.setBorder(BorderFactory.createLineBorder(new Color(12, 128, 32)));
+        argsPanel.setBorder(new TitledBorder(null, "参数设置", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.RED));
+        featurePanel.setBorder(new TitledBorder(null, "备选属性(包括n个特征+1个类别)", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.RED));
+        displayPanel.setBorder(new TitledBorder(null, "Top (K) 输出结果(导出图片请先安装Graphviz)", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        logPanel.setBorder(new TitledBorder(null, "特征组合日志", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        resultPanel.setBorder(new TitledBorder(null, "组合结果", TitledBorder.DEFAULT_JUSTIFICATION,
+                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+
         progressBar.setStringPainted(true);
         allButton.setEnabled(false);
         reverseButton.setEnabled(false);
         startButton.setEnabled(false);
-
-
-        // 内容面板
-        contentPanel.setLayout(new GridLayout(1, 2)); // 设置内容面板
-        contentPanel.add(argsPanel);
-        contentPanel.add(jspFeaturePanel);
-        argsPanel.setLayout(new GridLayout(1, 2));
-        argsPanel.setBorder(new TitledBorder(null, "参数设置", TitledBorder.DEFAULT_JUSTIFICATION,
-                TitledBorder.DEFAULT_POSITION, null, Color.RED));
-
-        panel1.setLayout(new GridLayout(10, 1)); // 设置布局
-        panel2.setLayout(new GridLayout(10, 1)); // 设置布局
-        argsPanel.add(panel1);
-        argsPanel.add(panel2);
-
-        featurePanel.setLayout(new GridLayout(10, 2));
-        featurePanel.setBorder(new TitledBorder(null, "备选属性(包括n个特征+1个类别)", TitledBorder.DEFAULT_JUSTIFICATION,
-                TitledBorder.DEFAULT_POSITION, null, Color.RED));
-
-        panel1.add(featureNumber);
-        panel1.add(maxSelectFeatureNumber);
-        panel1.add(threshold);
-        panel1.add(metric);
-        panel1.add(combination);
-        panel1.add(top);
-        panel1.add(filePath);
-        panel1.add(fileType);
-        panel1.add(position);
-        panel1.add(label);
-
-
-        // 创建文本域用于用户输入
-
         featureNumberText.setEditable(false);
-        featureNumberText.setText("0");
-        maxSelectFeatureNumberText.setText("0");
-        thresholdText.setText("0.0");
-        topText.setText("10");
+        logArea.setLineWrap(true);
+        resultArea.setLineWrap(true);
 
         metricComboBox.addItem("F1");
         metricComboBox.addItem("AUC");
@@ -176,52 +204,28 @@ public class Window implements ActionListener {
 
         positionComboBox.addItem("垂直");
         positionComboBox.addItem("水平");
-        panel2.add(featureNumberText);
-        panel2.add(maxSelectFeatureNumberText);
-        panel2.add(thresholdText);
-        panel2.add(metricComboBox);
-        panel2.add(combinationComboBox);
-        panel2.add(topText);
-        panel2.add(filePathText);
-        panel2.add(fileTypeComboBox);
-        panel2.add(positionComboBox);
-        panel2.add(labelText);
+    }
 
-        // 结果输出区域
-        progressPanel.add(new JLabel("探索路径百分比: "));
-        progressPanel.add(progressBar);
-        progressPanel.add(proInfo);
-        logArea.setLineWrap(true);
-        resultArea.setLineWrap(true);
-        bottomPanel.setLayout(new BorderLayout());
-        bottomPanel.add(progressPanel, BorderLayout.NORTH);
-        bottomPanel.add(logPanel, BorderLayout.WEST);
-        bottomPanel.add(resultPanel, BorderLayout.EAST);
-        bottomPanel.setBorder(new TitledBorder(null, "Top (K) 输出结果(导出图片请先安装Graphviz)", TitledBorder.DEFAULT_JUSTIFICATION,
-                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        logPanel.setBorder(new TitledBorder(null, "特征组合日志", TitledBorder.DEFAULT_JUSTIFICATION,
-                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        resultPanel.setBorder(new TitledBorder(null, "组合结果", TitledBorder.DEFAULT_JUSTIFICATION,
-                TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-
-
-        // 添加事件监听
+    /**
+     * 添加事件监听器
+     */
+    public void addEventListener() {
         fileTypeComboBox.addActionListener(this::actionPerformed);
         positionComboBox.addActionListener(this::actionPerformed);
         startButton.addActionListener(this::actionPerformed);
         allButton.addActionListener(this::actionPerformed);
         reverseButton.addActionListener(this::actionPerformed);
         openButton.addActionListener(this::actionPerformed);
-
-        frame.setVisible(true);// 设置界面可见
     }
 
     /**
      * 事件动作实现
+     *
+     * @param e 事件源
      */
     public void actionPerformed(ActionEvent e) {
 
-        //////////////////////////////////////////////////////////选择数据集
+        //////////////////////////////////////////////////////////打开数据集文件夹事件///////////////////////////////////////
         if (e.getSource() == openButton) {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);  //only show directories
@@ -266,7 +270,7 @@ public class Window implements ActionListener {
             }
         }
 
-        ////////////////////////////////////////////////////////////////选择测试特征
+        ////////////////////////////////////////////////////////////////选择测试特征/////////////////////////////////////
         if (e.getSource() == allButton) {
             for (int i = 0; i < checkBoxes.length; i++)
                 checkBoxes[i].setSelected(true);
@@ -286,7 +290,7 @@ public class Window implements ActionListener {
             maxSelectFeatureNumberText.setText(featureNumberText.getText());
         }
 
-        /////////////////////////////////////////////////////////开始选择事件
+        /////////////////////////////////////////////////////////开始选择事件///////////////////////////////////////////
         if (e.getSource() == startButton) {
             timer.restart();
             //设置运行配置
