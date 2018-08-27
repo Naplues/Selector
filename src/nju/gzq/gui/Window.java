@@ -185,7 +185,9 @@ public class Window implements ActionListener {
         startButton.setEnabled(false);
         featureNumberText.setEditable(false);
         logArea.setLineWrap(true);
+        logArea.setEditable(false);
         resultArea.setLineWrap(true);
+        resultArea.setEditable(false);
 
         metricComboBox.addItem("F1");
         metricComboBox.addItem("AUC");
@@ -295,7 +297,6 @@ public class Window implements ActionListener {
             timer.restart();
             //设置运行配置
             Setting.dataPath = dataPath;
-
             try {
                 String[] temps = labelText.getText().split(";");
                 Setting.labelIndex = Integer.parseInt(temps[0]);
@@ -352,12 +353,13 @@ public class Window implements ActionListener {
             progressBar.setMinimum(0);
             progressBar.setMaximum((int) Math.pow(2, Setting.featureNumber) - 1);
 
+            Window.log = new StringBuffer("");
+            logArea.setText(log.toString());
+            resultArea.setText("");
+            progressBar.setValue(0);
+            proInfo.setText("Path(s): 0");
+            currentProgress = 0;
             try {
-                logArea.setText("");
-                resultArea.setText("");
-                progressBar.setValue(0);
-                proInfo.setText("Path(s): 0");
-                currentProgress = 0;
                 swingWorker = new SwingWorker<Void, Integer>() {
                     @Override
                     protected Void doInBackground() throws Exception {

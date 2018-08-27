@@ -86,7 +86,7 @@ public class Selector {
                     explore(newNode, neededFeatureNumber);  //探索子节点
             } else {
                 usedSet.remove(candidate);
-                Window.currentProgress++;
+                Window.currentProgress++; //路径探索完毕
             }
         }
     }
