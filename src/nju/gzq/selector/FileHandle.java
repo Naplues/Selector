@@ -4,6 +4,8 @@ package nju.gzq.selector; /**
  * @author naplues
  */
 
+import nju.gzq.base.BaseProject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,22 +22,38 @@ public class FileHandle {
 
     /**
      * 获取数据集属性名
+     *
      * @param dir
      * @return
      */
     public static String[] getAttributeNames(File dir) {
-        String[] attributeNames;
+        String[] attributeNames = {};
 
         File[] projects = dir.listFiles();
         for (File project : projects) {
             File[] files = project.listFiles();
             for (int i = 0; i < files.length; i++) {
-                List<String> lines = FileHandle.readFileToLines(files[i].getPath());
-                attributeNames = lines.get(0).split(",");
+                if (files[i].getPath().endsWith(".csv")) {
+                    List<String> lines = FileHandle.readFileToLines(files[i].getPath());
+                    attributeNames = lines.get(0).split(",");
+
+                } else if (files[i].getPath().endsWith(".arff")) {
+                    List<String> lines = FileHandle.readFileToLines(files[i].getPath());
+                    StringBuffer nameString = new StringBuffer("");
+                    for (int j = 0; j < lines.size(); j++) {
+                        if (lines.get(j).startsWith("@attribute")) {
+                            nameString.append(lines.get(j).split(BaseProject.blankSeparator)[1] + BaseProject.separator);
+                        }
+                    }
+                    nameString.subSequence(0, nameString.length() - 1);
+                    attributeNames = nameString.toString().split(",");
+                }
                 for (int j = 0; j < attributeNames.length; j++) attributeNames[j] = attributeNames[j].replace("\"", "");
                 return attributeNames;
             }
         }
+
+
         return null;
     }
 
@@ -140,9 +158,7 @@ public class FileHandle {
     }
 
     /**
-     *
      * @param filePath
-     * @param string
      * @param a
      */
     public static void writeLinesToFile(String filePath, List<String> lines, boolean... a) {

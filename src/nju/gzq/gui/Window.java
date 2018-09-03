@@ -369,6 +369,7 @@ public class Window implements ActionListener {
                 return;
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "请指定正确的标记索引或检查索引值!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                ex.printStackTrace();
                 return;
             }
             //开始选择

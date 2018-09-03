@@ -16,7 +16,9 @@ public class BaseProject {
     protected String[] dataFileNames;
     protected BaseFeature[][] features;
     protected static String[] featureNames;
-    protected static String separator = ",";
+    public static String blankSeparator = " ";
+    public static String separator = ",";
+    public static String tabSeparator = "\t";
 
 
     public BaseProject() {
@@ -37,16 +39,45 @@ public class BaseProject {
 
         for (int i = 0; i < features.length; i++) {
             dataFileNames[i] = dataFiles[i].getPath(); // 数据文件名称
-            //数据行,每行代表一条特征实例,第一行为名称
-            List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
-            //有feature[i].length 个特征实例,大小为文件行数-1
-            features[i] = new BaseFeature[lines.size() - 1];
 
-            for (int j = 0; j < features[i].length; j++) {
-                features[i][j] = new BaseFeature(lines.get(j + 1).split(separator), labelIndex, abandonIndex);
+            if (dataFileNames[i].endsWith(".csv")) {
+                //数据行,每行代表一条特征实例,第一行为名称
+                List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
+                //有feature[i].length 个特征实例,大小为文件行数-1
+                features[i] = new BaseFeature[lines.size() - 1];
+                for (int j = 0; j < features[i].length; j++) {
+                    features[i][j] = new BaseFeature(lines.get(j + 1).split(separator), labelIndex, abandonIndex);
+                }
+                // 设置特征名称与索引
+                if (featureNames == null) setFeatureNames(lines.get(0).split(separator), labelIndex, abandonIndex);
+            } else if (dataFileNames[i].endsWith(".arff")) {
+                //数据行,每行代表一条特征实例,第一行为名称
+                List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
+                //有feature[i].length 个特征实例,大小为文件行数-1
+                int diff = 0;
+                for (int j = 0; j < lines.size(); j++) {
+                    if (lines.get(j).startsWith("@") || lines.get(j).trim().equals("")) {
+                        diff++;
+                        continue;
+                    }
+                    break;
+                }
+                features[i] = new BaseFeature[lines.size() - diff];
+                for (int j = 0; j < features[i].length; j++) {
+                    features[i][j] = new BaseFeature(lines.get(j + diff).split(separator), labelIndex, abandonIndex);
+                }
+
+                StringBuffer nameString = new StringBuffer("");
+                for (int j = 0; j < lines.size(); j++) {
+                    if (lines.get(j).startsWith("@attribute")) {
+                        nameString.append(lines.get(j).split(blankSeparator)[1] + separator);
+                    }
+                }
+                nameString.subSequence(0, nameString.length() - 1);
+                // 设置特征名称与索引
+                if (featureNames == null)
+                    setFeatureNames(nameString.toString().split(separator), labelIndex, abandonIndex);
             }
-            // 设置特征名称与索引
-            if (featureNames == null) setFeatureNames(lines.get(0).split(separator), labelIndex, abandonIndex);
         }
     }
 
@@ -97,6 +128,7 @@ public class BaseProject {
             featureNames[i++] = feature[j].replace("\"", "");
         }
     }
+
 
     /**
      * 后续工作,为下次读取项目做准备

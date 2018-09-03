@@ -58,6 +58,9 @@ public class BaseFeature {
             throw new Exception("label value error");
         }
         this.label = valueString[labelIndex].equals(Setting.positiveName);
+
+        //System.out.println(this.label);
+
     }
 
     /**
