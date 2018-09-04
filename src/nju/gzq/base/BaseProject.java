@@ -19,6 +19,8 @@ public class BaseProject {
     public static String blankSeparator = " ";
     public static String separator = ",";
     public static String tabSeparator = "\t";
+    public static String CSVFormat = ".csv";
+    public static String ARFFFormat = ".arff";
 
 
     public BaseProject() {
@@ -39,21 +41,18 @@ public class BaseProject {
 
         for (int i = 0; i < features.length; i++) {
             dataFileNames[i] = dataFiles[i].getPath(); // 数据文件名称
+            //数据行,每行代表一条特征实例,第一行为名称
+            List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
+            StringBuffer nameString = new StringBuffer("");
 
-            if (dataFileNames[i].endsWith(".csv")) {
-                //数据行,每行代表一条特征实例,第一行为名称
-                List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
+            if (dataFileNames[i].endsWith(CSVFormat)) {
                 //有feature[i].length 个特征实例,大小为文件行数-1
                 features[i] = new BaseFeature[lines.size() - 1];
                 for (int j = 0; j < features[i].length; j++) {
                     features[i][j] = new BaseFeature(lines.get(j + 1).split(separator), labelIndex, abandonIndex);
                 }
-                // 设置特征名称与索引
-                if (featureNames == null) setFeatureNames(lines.get(0).split(separator), labelIndex, abandonIndex);
-            } else if (dataFileNames[i].endsWith(".arff")) {
-                //数据行,每行代表一条特征实例,第一行为名称
-                List<String> lines = FileHandle.readFileToLines(dataFiles[i].getPath());
-                //有feature[i].length 个特征实例,大小为文件行数-1
+                nameString.append(lines.get(0));
+            } else if (dataFileNames[i].endsWith(ARFFFormat)) {
                 int diff = 0;
                 for (int j = 0; j < lines.size(); j++) {
                     if (lines.get(j).startsWith("@") || lines.get(j).trim().equals("")) {
@@ -62,22 +61,22 @@ public class BaseProject {
                     }
                     break;
                 }
+                //有feature[i].length 个特征实例,大小为文件行数-1
                 features[i] = new BaseFeature[lines.size() - diff];
                 for (int j = 0; j < features[i].length; j++) {
                     features[i][j] = new BaseFeature(lines.get(j + diff).split(separator), labelIndex, abandonIndex);
                 }
 
-                StringBuffer nameString = new StringBuffer("");
                 for (int j = 0; j < lines.size(); j++) {
-                    if (lines.get(j).startsWith("@attribute")) {
+                    if (lines.get(j).startsWith("@attribute"))
                         nameString.append(lines.get(j).split(blankSeparator)[1] + separator);
-                    }
                 }
                 nameString.subSequence(0, nameString.length() - 1);
-                // 设置特征名称与索引
-                if (featureNames == null)
-                    setFeatureNames(nameString.toString().split(separator), labelIndex, abandonIndex);
             }
+
+            // 设置特征名称与索引
+            if (featureNames == null)
+                setFeatureNames(nameString.toString().split(separator), labelIndex, abandonIndex);
         }
     }
 
@@ -129,9 +128,9 @@ public class BaseProject {
         }
     }
 
-
     /**
      * 后续工作,为下次读取项目做准备
+     * 将特征名称数组清空, 方便下次选取数据集时重新赋值
      */
     public static void finish() {
         featureNames = null;

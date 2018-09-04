@@ -25,7 +25,7 @@ public class Window implements ActionListener {
     private JPanel displayPanel = new JPanel(); // 3.显示面板
 
     //1.操作面板 组件
-    private JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件");
+    private JLabel info = new JLabel("数据文件存放: 数据集文件夹>项目文件夹>项目文件(.csv/.arff)");
     private JButton openButton = new JButton("打开数据集文件夹");
     private JButton allButton = new JButton("全选");
     private JButton reverseButton = new JButton("反选");
@@ -296,8 +296,7 @@ public class Window implements ActionListener {
 
         ////////////////////////////////////////////////////////////////选择测试特征/////////////////////////////////////
         if (e.getSource() == allButton) {
-            for (int i = 0; i < checkBoxes.length; i++)
-                checkBoxes[i].setSelected(true);
+            for (int i = 0; i < checkBoxes.length; i++) checkBoxes[i].setSelected(true);
             featureNumberText.setText((checkBoxes.length - 1) + "");
             maxSelectFeatureNumberText.setText(featureNumberText.getText());
         }
@@ -325,7 +324,7 @@ public class Window implements ActionListener {
                 Setting.positiveName = temps[1];
                 Setting.negativeName = temps[2];
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "请输入正确的标记特征索引值格式:index;true;false!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "请输入正确的标记特征索引值格式:index;true;false!", "标记特征出错!", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
             if (!checkBoxes[Setting.labelIndex].isSelected()) {
@@ -357,13 +356,11 @@ public class Window implements ActionListener {
             }
             Setting.filePath = filePathText.getText();
             Setting.fileType = fileTypeComboBox.getSelectedItem().toString();
-            if (positionComboBox.getSelectedIndex() == 0)
-                Setting.isHorizontal = false;
-            else
-                Setting.isHorizontal = true;
+            if (positionComboBox.getSelectedIndex() == 0) Setting.isHorizontal = false;
+            else Setting.isHorizontal = true;
 
             try {
-                Setting.setProjects();
+                Setting.setProjects();  //读取数据集
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "请不要选择非数值型属性!", "出错!", JOptionPane.INFORMATION_MESSAGE);
                 return;
@@ -376,7 +373,7 @@ public class Window implements ActionListener {
             progressBar.setMinimum(0);
             progressBar.setMaximum((int) Math.pow(2, Setting.featureNumber) - 1);
 
-            Window.log = new StringBuffer("");
+            Window.log = new StringBuffer();
             logArea.setText(log.toString());
             resultArea.setText("");
             progressBar.setValue(0);
@@ -393,20 +390,20 @@ public class Window implements ActionListener {
                     }
                 };
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "请检查数据集格式!", "出错!", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "请检查数据集格式是否正确!", "出错!", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
             swingWorker.execute();
         }
 
-        // 计时器刷新界面界面
+        //////////////////////////////////////////////// 计时器刷新界面界面
         if (e.getSource() == timer) {
             proInfo.setText("Path(s): " + currentProgress + "/" + progressBar.getMaximum());
             progressBar.setValue(currentProgress);
             resultArea.setText(Setting.resultString);
         }
 
-        // 显示帮助信息
+        //////////////////////////////////////////////// 显示帮助信息
         if (e.getSource() == helpMenuItem) {
             JFrame helpFrame = new JFrame("帮助信息");
             helpFrame.setSize(500, 400);
@@ -415,14 +412,14 @@ public class Window implements ActionListener {
             JPanel panel = new JPanel();
 
             String textString = "数据文件说明\n";
-            textString += "1. 数据集文件类型: .csv格式\n";
+            textString += "1. 数据集文件类型: .csv格式/.arff格式\n";
             textString += "2. 数据集文件夹格式: 一个数据集文件夹包含若干个子文件夹, 每个子文件夹代表一个项目, 每个项目文件夹包含若干个csv数据文件\n\n\n";
             textString += "   数据集样例\n";
             textString += "   data\n";
             textString += "       -> project_1\n";
             textString += "                   -> version_1.csv\n";
             textString += "                   -> version_2.csv\n";
-            textString += "       -> project_1\n";
+            textString += "       -> project_2\n";
             textString += "                   -> version_1.csv\n";
             textString += "   \n";
 
