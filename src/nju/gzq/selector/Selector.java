@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class Selector {
     //选项值: 表示使用全部组合结果
-    public static final int ALL = -1;
-    private BaseProject project;
+    private static final int ALL = -1;
+    //private BaseProject project;
 
     /**
      * 开始选择特征

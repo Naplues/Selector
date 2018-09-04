@@ -6,7 +6,7 @@ public class Main {
     /**
      * Program entry
      *
-     * @param args
+     * @param args 命令参数
      */
     public static void main(String[] args) {
         new Window();

@@ -24,7 +24,7 @@ public class AUC {
                 for (int k = 0; k < features.length; k++) {
                     if (combination == Evaluation.MULTIPLE)
                         probability *= baseFeatures[i][j].getValueFromIndex(features[k]);
-                    else
+                    else if (combination == Evaluation.SUMMATION)
                         probability += baseFeatures[i][j].getValueFromIndex(features[k]);
                 }
 

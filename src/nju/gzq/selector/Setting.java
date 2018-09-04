@@ -26,7 +26,7 @@ public class Setting {
     public static String resultString = "";
 
     //项目对象
-    public static BaseProject[] baseProjects;
+    private static BaseProject[] baseProjects;
 
     public static void setProjects() throws Exception {
         File[] projects = new File(dataPath).listFiles();
@@ -39,6 +39,7 @@ public class Setting {
         return baseProjects;
     }
 
+    /*
     public static void print() {
         System.out.println("dataPath: " + dataPath);
         System.out.println("labelIndex: " + labelIndex);
@@ -55,5 +56,5 @@ public class Setting {
         System.out.println("filePath: " + filePath);
         System.out.println("fileType: " + fileType);
         System.out.println();
-    }
+    }*/
 }
