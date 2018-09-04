@@ -204,7 +204,8 @@ public class Window implements ActionListener {
         resultArea.setLineWrap(true);
         resultArea.setEditable(false);
 
-        metricComboBox.addItem("F1");
+        metricComboBox.addItem("F1_50%");
+        metricComboBox.addItem("F1_HTW");
         metricComboBox.addItem("AUC");
         metricComboBox.addItem("Recall@1");
         metricComboBox.addItem("Recall@5");

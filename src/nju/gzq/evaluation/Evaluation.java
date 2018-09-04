@@ -94,7 +94,7 @@ public class Evaluation {
         map /= projects.length;
         String tempLog = "Path " + Window.currentProgress + ":[ ";
         for (Integer feature : features) tempLog += feature + " ";
-        tempLog += "], F1= " + map + "\n";
+        tempLog += "], MAP= " + map + "\n";
         Window.log.append(tempLog);
         Window.logArea.setText(Window.log.toString());
         return map;
@@ -108,7 +108,7 @@ public class Evaluation {
      * @param abandonIndex 遗弃索引
      * @return
      */
-    public static double getF1(Integer[] features, BaseProject[] baseProjects, int combination, int labelIndex, int... abandonIndex) {
+    public static double getF1_50(Integer[] features, BaseProject[] baseProjects, int combination, int labelIndex, int... abandonIndex) {
         Double value = .0;
 
         for (BaseProject project : baseProjects) {
@@ -118,7 +118,31 @@ public class Evaluation {
         value /= baseProjects.length;
         String tempLog = "Path " + Window.currentProgress + ":[ ";
         for (Integer feature : features) tempLog += feature + " ";
-        tempLog += "], F1= " + value + "\n";
+        tempLog += "], F1_50%= " + value + "\n";
+        Window.log.append(tempLog);
+        Window.logArea.setText(Window.log.toString());
+        return value;
+    }
+
+    /**
+     * 获取数据集上所有项目的平均F1值
+     *
+     * @param features
+     * @param labelIndex   类别索引
+     * @param abandonIndex 遗弃索引
+     * @return
+     */
+    public static double getF1_HTW(Integer[] features, BaseProject[] baseProjects, int combination, int labelIndex, int... abandonIndex) {
+        Double value = .0;
+
+        for (BaseProject project : baseProjects) {
+            project.setFeatures(BaseRanking.rankByFeature(project, combination, BaseRanking.RANK_DESC, features));  //Ranking
+            value += F1.getValue(project.getFeatures());
+        }
+        value /= baseProjects.length;
+        String tempLog = "Path " + Window.currentProgress + ":[ ";
+        for (Integer feature : features) tempLog += feature + " ";
+        tempLog += "], F1_HTW= " + value + "\n";
         Window.log.append(tempLog);
         Window.logArea.setText(Window.log.toString());
         return value;

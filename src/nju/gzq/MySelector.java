@@ -18,8 +18,10 @@ public class MySelector extends Selector {
                 value = Evaluation.getMRR(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
             else if (Setting.metric.equals("MAP"))
                 value = Evaluation.getMAP(features, Setting.dataPath, Setting.combination, Setting.labelIndex, Setting.abandonIndex);
-            else if (Setting.metric.equals("F1"))
-                value = Evaluation.getF1(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if (Setting.metric.equals("F1_50%"))
+                value = Evaluation.getF1_50(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
+            else if(Setting.metric.equals("F1_HTW"))
+                value = Evaluation.getF1_HTW(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
             else if (Setting.metric.equals("AUC"))
                 value = Evaluation.getAUC(features, Setting.getProjects(), Setting.combination, Setting.labelIndex, Setting.abandonIndex);
             else value = .0;
