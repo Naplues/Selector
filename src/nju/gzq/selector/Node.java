@@ -24,6 +24,7 @@ public class Node {
     private int featureId;
     private Node parent;
     private boolean best;
+    private boolean minPath;
     private List<Node> children;
 
     private Set<Object> featureUsed;
@@ -35,6 +36,7 @@ public class Node {
         id = ID++;
         name = "null";
         best = false;
+        minPath = false;
         parent = null;
         children = new ArrayList<>();
         featureUsed = null;
@@ -194,5 +196,13 @@ public class Node {
         for (Object s : set) name += s + " ";
         name += "\"";
         return name;
+    }
+
+    public boolean isMinPath() {
+        return minPath;
+    }
+
+    public void setMinPath(boolean minPath) {
+        this.minPath = minPath;
     }
 }

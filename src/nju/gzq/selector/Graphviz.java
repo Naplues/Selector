@@ -30,12 +30,24 @@ public class Graphviz {
         Set<Node> nodes = new HashSet<>(); //节点集合
         Set<String> links = new HashSet<>(); //边集合
         int[] frequency = new int[featureNames.length];  //特征出现频率数组
+        int minPathNum = featureNames.length; //最短路径数=总特征个数
+        Node minPathNode = null;
         int count = 0; //当前存储的组合数目
         for (Node leaf : leaves) { //处理一条路径
+
             if (count >= top) break;//计数，判断是否输出前top个组合结果
             count++;
             Node performance = new Node(leaf); //表示路径性能的节点,根据叶节点的分数值构造“性能节点”,该节点仅显示路径分数
             leaf.addChild(performance);  //将性能节点续在路径，末端
+            //更新最少路径数
+            if (leaf.getFeatureUsed().size() < minPathNum) {
+                minPathNum = leaf.getFeatureUsed().size();
+                if (minPathNode != null) minPathNode.setMinPath(false);
+                minPathNode = performance;
+                minPathNode.setMinPath(true);
+            }
+
+
             nodes.add(performance);  //将性能节点加入节点集合
             links.add(" " + leaf.getId() + " -> " + performance.getId() + "\n"); //将路径末端的叶节点->性能节点的边加入边集合
 
@@ -63,9 +75,14 @@ public class Graphviz {
             string += node.getId();
             string += "[ ";
             string += "label = \"" + node.getName() + "\", ";
-            if (node.getChildren().size() == 0)
-                string += " color = green, style = filled, fillcolor = limegreen, shape = box";
-            if (node.getName().equals("null"))
+            if (node.getChildren().size() == 0) //叶子节点
+            {
+                if (node.isMinPath()) //最短路径性能节点
+                    string += " color = green, style = filled, fillcolor = red, shape = box";
+                else
+                    string += " color = green, style = filled, fillcolor = limegreen, shape = box";
+            }
+            if (node.getName().equals("null"))  //根节点
                 string += " color = pink, style = filled, fillcolor = pink, shape = doublecircle";
             if (node.isBest())
                 string += " style = filled, fillcolor = cyan";
