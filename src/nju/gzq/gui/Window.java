@@ -423,6 +423,9 @@ public class Window implements ActionListener {
             textString += "       -> project_2\n";
             textString += "                   -> version_1.csv\n";
             textString += "   \n";
+            textString += "使用dot生成图片的命令\n";
+            textString += "dot result.dot -Tsvg -o result.svg\n";
+
 
             JTextArea textArea = new JTextArea(textString, 23, 44);
             textArea.setLineWrap(true);
