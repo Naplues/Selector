@@ -39,6 +39,7 @@ public class Window implements ActionListener {
     private JScrollPane jspFeaturePanel = new JScrollPane(featurePanel);
 
     // 标签
+    private JLabel isAverageResult = new JLabel("计算方式", JLabel.CENTER);
     private JLabel featureNumber = new JLabel("使用特征数", JLabel.CENTER);
     private JLabel maxSelectFeatureNumber = new JLabel("最大选择特征数", JLabel.CENTER);
     private JLabel threshold = new JLabel("最小性能阈值", JLabel.CENTER);
@@ -51,6 +52,7 @@ public class Window implements ActionListener {
     private JLabel label = new JLabel("标记特征索引及取值(e.g. 10;true;false)", JLabel.CENTER);
 
     // 输入框
+    private JCheckBox isAverageResultBox = new JCheckBox("计算平均性能(该选项功能暂未实现)", true);
     private JTextField featureNumberText = new JTextField("0", 15);
     private JTextField maxSelectFeatureNumberText = new JTextField("0", 15);
     private JTextField thresholdText = new JTextField("0.0", 15);
@@ -110,9 +112,9 @@ public class Window implements ActionListener {
         panel.setLayout(new BorderLayout()); // 设置默认BorderLayout布局
         contentPanel.setLayout(new GridLayout(1, 2)); // 设置布局
         argsPanel.setLayout(new GridLayout(1, 2));
-        argsLabelPanel.setLayout(new GridLayout(10, 1)); // 参数标签布局
-        argsValuePanel.setLayout(new GridLayout(10, 1)); // 参数值布局
-        featurePanel.setLayout(new GridLayout(10, 2)); // 特征布局
+        argsLabelPanel.setLayout(new GridLayout(11, 1)); // 参数标签布局
+        argsValuePanel.setLayout(new GridLayout(11, 1)); // 参数值布局
+        featurePanel.setLayout(new GridLayout(11, 2)); // 特征布局
         displayPanel.setLayout(new BorderLayout());
 
         //面板位置
@@ -135,6 +137,7 @@ public class Window implements ActionListener {
         argsPanel.add(argsLabelPanel);
         argsPanel.add(argsValuePanel);
 
+        argsLabelPanel.add(isAverageResult);
         argsLabelPanel.add(featureNumber);
         argsLabelPanel.add(maxSelectFeatureNumber);
         argsLabelPanel.add(threshold);
@@ -146,6 +149,7 @@ public class Window implements ActionListener {
         argsLabelPanel.add(position);
         argsLabelPanel.add(label);
 
+        argsValuePanel.add(isAverageResultBox);
         argsValuePanel.add(featureNumberText);
         argsValuePanel.add(maxSelectFeatureNumberText);
         argsValuePanel.add(thresholdText);
