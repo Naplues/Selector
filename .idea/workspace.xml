@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Selector/nju/gzq/gui/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nju/gzq/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nju/gzq/gui/Window.java" afterDir="false" />
-    </list>
+    <list default="true" id="d4812561-5ddf-4ee1-9579-4e5f8a4a6dfc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +20,8 @@
       <file leaf-file-name="Window.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
+            <state relative-caret-position="133">
+              <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -100,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -322,7 +316,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21895425" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21895425" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908162" />
       <window_info id="Capture Tool" order="6" />
@@ -589,8 +583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nju/gzq/gui/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
+        <state relative-caret-position="133">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
         </state>
       </provider>
     </entry>
