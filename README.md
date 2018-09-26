@@ -55,7 +55,7 @@ class F1Selector extends Selector {
 ```
 
 ## GUI
-![GUI](https://github.com/Naplues/Selector/blob/master/assert/gui.png "GUI")
+![GUI](https://github.com/Naplues/Selector/blob/master/assert/gui.bmp "GUI")
 
 ## Sample Result
 ![Algorithm](https://github.com/Naplues/Selector/blob/master/assert/f1.svg "Algorithm")
