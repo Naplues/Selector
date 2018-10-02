@@ -4,7 +4,7 @@ Feature Selector: To find excellent feature combinations according to various me
 # 代码介绍及使用方法
 
 ## PLC Approach
-![PLC](https://github.com/Naplues/PLC)
+![The code for testing PLC Approach](https://github.com/Naplues/PLC)
 
 ## package: nju.gzq.selector
 该包内包含了特征选择的算法实现和最后的结果作图 (Algorithm).
