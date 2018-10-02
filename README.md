@@ -67,3 +67,5 @@ class F1Selector extends Selector {
 ![sample](https://github.com/Naplues/Selector/blob/master/assert/algorithm.bmp)
 
 
+## Contact
+email: naplus@smail.nju.edu.cn
