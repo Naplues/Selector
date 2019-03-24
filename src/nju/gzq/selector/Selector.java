@@ -84,9 +84,12 @@ public class Selector {
                 parent.addChild(newNode);
                 if (newNode.getFeatureUsed().size() < neededFeatureNumber)
                     explore(newNode, neededFeatureNumber);  //探索子节点
+                else{
+                    Window.currentProgress++; //路径探索完毕
+                }
             } else {
                 usedSet.remove(candidate);
-                Window.currentProgress++; //路径探索完毕
+                //Window.currentProgress++; //路径探索完毕
             }
         }
     }

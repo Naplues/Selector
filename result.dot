@@ -1,0 +1,87 @@
+digraph FeatureTree {
+305[ label = "pos", ]
+207[ label = "addLines",  style = filled, fillcolor = cyan]
+86[ label = "rf", ]
+165[ label = "isComponent", ]
+167[ label = "isComponent", ]
+77[ label = "pos", ]
+1[ label = "files", ]
+168[ label = "distance", ]
+225[ label = "distance", ]
+78[ label = "time", ]
+90[ label = "isComponent", ]
+359[ label = "0.447",  color = green, style = filled, fillcolor = limegreen, shape = box]
+218[ label = "distance", ]
+0[ label = "null",  color = pink, style = filled, fillcolor = pink, shape = doublecircle]
+82[ label = "isComponent", ]
+91[ label = "distance", ]
+319[ label = "isComponent", ]
+209[ label = "time",  style = filled, fillcolor = cyan]
+354[ label = "0.455",  color = green, style = filled, fillcolor = limegreen, shape = box]
+361[ label = "0.446",  color = green, style = filled, fillcolor = limegreen, shape = box]
+353[ label = "0.461",  color = green, style = filled, fillcolor = red, shape = box]
+163[ label = "time", ]
+356[ label = "0.450",  color = green, style = filled, fillcolor = limegreen, shape = box]
+355[ label = "0.450",  color = green, style = filled, fillcolor = limegreen, shape = box]
+360[ label = "0.446",  color = green, style = filled, fillcolor = limegreen, shape = box]
+357[ label = "0.449",  color = green, style = filled, fillcolor = limegreen, shape = box]
+208[ label = "pos",  style = filled, fillcolor = cyan]
+164[ label = "rf", ]
+83[ label = "distance", ]
+162[ label = "pos", ]
+97[ label = "isComponent", ]
+224[ label = "isComponent", ]
+217[ label = "isComponent", ]
+98[ label = "distance", ]
+213[ label = "rf", ]
+358[ label = "0.447",  color = green, style = filled, fillcolor = limegreen, shape = box]
+212[ label = "isComponent", ]
+211[ label = "isComponent",  style = filled, fillcolor = cyan]
+320[ label = "distance", ]
+352[ label = "0.466",  color = green, style = filled, fillcolor = limegreen, shape = box]
+210[ label = "rf",  style = filled, fillcolor = cyan]
+314[ label = "rf", ]
+123[ label = "lines", ]
+ 213 -> 217
+ 305 -> 314
+ 162 -> 163
+ 209 -> 210
+ 207 -> 208
+ 98 -> 360
+ 209 -> 212
+ 123 -> 162
+ 167 -> 168
+ 314 -> 319
+ 163 -> 167
+ 91 -> 361
+ 320 -> 354
+ 83 -> 356
+ 78 -> 82
+ 0 -> 123
+ 225 -> 358
+ 218 -> 359
+ 77 -> 97
+ 86 -> 90
+ 211 -> 352
+ 1 -> 77
+ 208 -> 209
+ 0 -> 305
+ 224 -> 225
+ 217 -> 218
+ 208 -> 213
+ 210 -> 211
+ 168 -> 357
+ 90 -> 91
+ 163 -> 164
+ 97 -> 98
+ 212 -> 353
+ 82 -> 83
+ 77 -> 86
+ 319 -> 320
+ 0 -> 207
+ 77 -> 78
+ 0 -> 1
+ 164 -> 165
+ 208 -> 224
+ 165 -> 355
+}

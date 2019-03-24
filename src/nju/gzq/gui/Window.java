@@ -379,7 +379,7 @@ public class Window implements ActionListener {
             progressBar.setMaximum((int) Math.pow(2, Setting.featureNumber) - 1);
 
             Window.log = new StringBuffer();
-            logArea.setText(log.toString());
+            logArea.setText(log.toString()); //日志
             resultArea.setText("");
             progressBar.setValue(0);
             proInfo.setText("Path(s): 0");
